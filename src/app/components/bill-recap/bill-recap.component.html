@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Bill recap</h2>
+    <div>
+       <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Amount (DH)</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of debtsBillResponse?.data?.debts">
+    <tr *ngIf="item.paid === false">
+      <th scope="row">{{item.name}}</th>
+      <td>{{item.type}}</td>
+      <td>{{item.amount}}</td>
+      <td>{{item.createdAt}}</td>
+    </tr>
+  </tbody>
+  <tbody *ngIf=" debtsBillResponse?.data?.debts?.length === 0">
+    <tr >
+      <th scope="row">Nothing Here</th>
+    </tr>
+  </tbody>
+</table>
+        <button (click)="payBill()">pay bill</button>
+    </div>
+</div>

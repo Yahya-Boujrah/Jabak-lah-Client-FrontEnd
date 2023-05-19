@@ -1,0 +1,13 @@
+<div *ngFor="let debt of debtsResponse?.data?.debts">
+    <div *ngIf="debt.type === 'DEBT'"> 
+        Debt: {{debt.name}}
+        Amount: {{debt.amount}} DH
+        <button class="btn btn-primary" (click)="add2Bill(debt)" >Add to bill</button>
+    </div>
+    <div *ngIf="debt.type === 'PENALTY'"> 
+        Penalty: {{debt.name}}
+        Amount: {{debt.amount}} DH
+        <button class="btn btn-danger"  (click)="add2Bill(debt)" >Add to bill</button>
+    </div>
+
+</div>

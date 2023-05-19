@@ -1,0 +1,14 @@
+<div class="container" *ngFor="let bill of billHistory?.data?.bills">
+    <div class="card">
+        <div class="card-header">
+            {{bill.id}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Amount: {{bill.totalAmount}} DH</h5>
+            <p class="card-text">Creation date: {{bill.createdAt}}</p>
+            <p>Debts: {{bill.debts}}</p>
+        </div>
+    </div>
+
+
+</div>
