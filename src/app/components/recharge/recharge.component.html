@@ -1,0 +1,76 @@
+<div class="container  ">
+    <div class="center" >
+        <div class="card-body">
+            <h1>
+                Effectuer un recharge 
+            </h1>
+            <form>
+                <div class="input">
+                    <h4>Opérateur Choisi : --{{operator}}</h4>
+                </div><br><br>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="inputbox">
+                            <input type="text" required="required">
+                            <span>Numérode Téléphone</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="inputbox" required="required" id="form">
+                            <select >
+                                <option id="none" selected></option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                            </select>
+                            <span id="amount">Montant</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div class="input">
+                <div class="row">
+                    <div class="col">
+                        <h4>Total : </h4>
+                    </div>
+                    <div class="col-md-2">
+                        <h4> {{amount}} DH</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 "></div>
+            <div class="col-md-4 "> <a href="#" class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter à la Facture</a> </div>
+            <div class="col-md-2 "> <a  class="btn btn-sm animated-button victoria-three" routerLink="/factures">Annuler</a> </div>
+        </div>
+               
+    </div>
+
+    <!-- modal -->
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <img src="../../../assets/verification.png" id="image"><br><br>
+                <h6 id="text">Votre Demmande est bien effectué !</h6>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+

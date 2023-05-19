@@ -1,0 +1,56 @@
+<div class="container  ">
+    <div class="center" >
+        <div class="card-body">
+            <h1>
+                Effectuer un Don
+            </h1>
+            <form>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="inputbox">
+                            <input type="text" required="required">
+                            <span>NUMÉRO DE DONATEUR</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="inputbox">
+                            <input type="text" required="required">
+                            <span>Montant de donation</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div class="input">
+                <div class="row">
+                    <div class="col">
+                        <h4>Total : </h4>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{don}} DH</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 "></div>
+            <div class="col-md-4 "> <a href="#" class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter à la Facture</a> </div>
+            <div class="col-md-2 "> <a  class="btn btn-sm animated-button victoria-three" routerLink="/factures">Annuler</a> </div>
+        </div>
+               
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <img src="../../../assets/verification.png" id="image"><br><br>
+                    <h6 id="text">Votre Demmande est bien effectué !</h6>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
