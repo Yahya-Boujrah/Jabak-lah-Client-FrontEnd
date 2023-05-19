@@ -1,0 +1,89 @@
+.top-navbar{
+    font-weight: 400;
+    background: #3a283d;
+    border-bottom: 1px solid #f3f3f3;
+    height: 4.5rem;
+}
+
+.nav-container{
+    max-width: 70%;
+    color: #fae4f6 ;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bottom-navbar{
+    background-color: #c0b8c0;
+    margin-top: 0%;
+}
+
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"); */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #c0b8c0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.bottom-navbar {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 100%;
+  padding: 0 340px;
+}
+
+.bottom-navbar a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 1px 50px;
+}
+
+.bottom-navbar a:hover {
+  color: #7a4d7a;
+}
+
+.bottom-navbar .dot {
+  /* width: 6px;
+  height: 6px;
+  background: #7a4d7a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; */
+}
+
+.bottom-navbar a:nth-child(1)::after ~ .dot {
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.bottom-navbar a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.menu-title{
+  justify-content: space-between;
+}
