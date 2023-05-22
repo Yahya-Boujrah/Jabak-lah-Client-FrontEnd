@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FacturesComponent } from './components/factures/factures.component';
-import { ProduitsComponent } from './components/produits/produits.component';
+import { CreditorsComponent } from './components/creditors/creditors.component';
+import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { AbonnementComponent } from './components/abonnement/abonnement.component';
 import { RechargeComponent } from './components/recharge/recharge.component';
 import { DonationComponent } from './components/donation/donation.component';
+import { BillComponent } from './components/bill/bill.component';
 
 const routes: Routes = [
   {
     path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
-    path: "factures" , component: FacturesComponent
+    path: "creditors" , component: CreditorsComponent
   },
   {
-    path: "produits" , component: ProduitsComponent
+    path: "products" , component: ProductsComponent
   },
   {
     path: "home" , component: HomeComponent
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: "donation" , component: DonationComponent
+  },
+  {
+    path: "bill" , component: BillComponent
   }
 
 ];
