@@ -11,9 +11,10 @@
 }
 
 img{
-    height: 300px;
+    width: 90%;
     padding: 20px;
-    padding-top: 30px;
+	height: 400px;
+    
 }
 
 /* button css  */
@@ -23,7 +24,7 @@ a.animated-button:link:hover, a.animated-button:visited:hover {
 	text-shadow: none;
 }
 
-a.animated-button:link, a.animated-button:visited {
+a.animated-button, a.animated-button:visited {
 	position: relative;
 	display: block;
 	margin: 30px auto 0;

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { Article } from 'src/app/interfaces/Article.interface';
 import { CustomResponse } from 'src/app/interfaces/Custom-response';
 import { Debt } from 'src/app/interfaces/Debt.interface';
 import { DebtService } from 'src/app/services/Debt.service';
@@ -13,16 +14,17 @@ import { DebtService } from 'src/app/services/Debt.service';
 })
 
 export class AbonnementComponent implements OnInit{
-  @Input() articleId!: number;
+  articleId!: number;
+  article!: Article;
 
   debtsResponse !: CustomResponse;
 
   public dataSubject = new BehaviorSubject<any>(null);
 
-  constructor(private debtService: DebtService, private router: Router) {}
+  constructor(private debtService: DebtService, private router: Router, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-
+    this.article = history.state.article;
     this.articleId = history.state.articleId ;
     console.log(this.articleId)
 
@@ -49,9 +51,15 @@ export class AbonnementComponent implements OnInit{
     let ids :number[] = [];
     console.log(debts);
     if (debts!.length > 0){
-      debts!.forEach(debt => ids.push(debt.id as number));
-      console.log(ids);
+      debts!.forEach(debt => {ids.push(debt.id as number);
+        debt.added2Bill= true;
+      });
       this.debtService.bindDebtToBill$(ids).subscribe();      
     } 
-  }  
+  } 
+  
+  cancel(){
+    this.router.navigate(['/navigation/creditors']);
+
+  }
 }

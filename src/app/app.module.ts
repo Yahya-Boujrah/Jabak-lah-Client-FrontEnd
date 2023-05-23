@@ -8,18 +8,17 @@ import { AppComponent } from './app.component';
 import { CreditorsComponent } from './components/creditors/creditors.component';
 import { ArticlesComponent } from './components/creditors/articles/articles.component';
 import { LoginComponent } from './components/login/login.component';
-import { BillRecapComponent } from './components/bill-recap/bill-recap.component';
 import { BillHistoryComponent } from './components/bill-history/bill-history.component';
 import { AuthInterceptorService } from './services/Auth-interceptor.service';
-import { FacturesComponent } from './components/factures/factures.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProduitsComponent } from './components/produits/produits.component';
+import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { AbonnementComponent } from './components/abonnement/abonnement.component';
 import { RechargeComponent } from './components/recharge/recharge.component';
 import { DonationComponent } from './components/donation/donation.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
+import { BillComponent } from './components/bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +28,15 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     RechargeComponent,
     LoginComponent,
     AbonnementComponent,
-    BillRecapComponent,
     BillHistoryComponent,
-    FacturesComponent,
     NavbarComponent,
-    ProduitsComponent,
+    ProductsComponent,
     HomeComponent,
     DonationComponent,
-    NavigationComponent
+    NavigationComponent,
+    RechargeComponent,
+    DonationComponent,
+    BillComponent
   ],
   imports: [
     BrowserModule,

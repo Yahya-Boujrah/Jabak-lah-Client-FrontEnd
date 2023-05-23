@@ -39,9 +39,11 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+  ngOnInit(){
 
-  ngOnInit(): void {
+  }
 
+  switch(){
     let switchCtn = document.querySelector("#switch-cnt") as HTMLElement;
     let switchC1 = document.querySelector("#switch-c1") as HTMLElement;
     let switchC2 = document.querySelector("#switch-c2") as HTMLElement;
@@ -49,35 +51,21 @@ export class LoginComponent implements OnInit {
     let switchBtn: NodeListOf<HTMLElement> = document.querySelectorAll(".switch-btn");
     let aContainer = document.querySelector("#a-container") as HTMLElement;
     let bContainer = document.querySelector("#b-container") as HTMLElement;
-    let allButtons: NodeListOf<HTMLElement> = document.querySelectorAll(".submit");
 
-    const getButtons = (e: Event) => e.preventDefault();
+    switchCtn.classList.add("is-gx");
+    setTimeout(function () {
+      switchCtn.classList.remove("is-gx");
+    }, 1500);
 
-    const changeForm = (e: Event) => {
-      switchCtn.classList.add("is-gx");
-      setTimeout(function () {
-        switchCtn.classList.remove("is-gx");
-      }, 1500);
+    switchCtn.classList.toggle("is-txr");
+    switchCircle[0].classList.toggle("is-txr");
+    switchCircle[1].classList.toggle("is-txr");
 
-      switchCtn.classList.toggle("is-txr");
-      switchCircle[0].classList.toggle("is-txr");
-      switchCircle[1].classList.toggle("is-txr");
-
-      switchC1.classList.toggle("is-hidden");
-      switchC2.classList.toggle("is-hidden");
-      aContainer.classList.toggle("is-txl");
-      bContainer.classList.toggle("is-txl");
-      bContainer.classList.toggle("is-z200");
-    };
-
-    const mainF = (e: Event) => {
-      for (let i = 0; i < allButtons.length; i++)
-        allButtons[i].addEventListener("click", getButtons);
-      for (let i = 0; i < switchBtn.length; i++)
-        switchBtn[i].addEventListener("click", changeForm);
-    };
-
-    window.addEventListener("load", mainF);
+    switchC1.classList.toggle("is-hidden");
+    switchC2.classList.toggle("is-hidden");
+    aContainer.classList.toggle("is-txl");
+    bContainer.classList.toggle("is-txl");
+    bContainer.classList.toggle("is-z200");
   }
 
 }

@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CustomResponse } from 'src/app/interfaces/Custom-response';
 import { BillService } from 'src/app/services/Bill.service';
 
 @Component({
-  selector: 'app-bill-recap',
-  templateUrl: './bill-recap.component.html',
-  styleUrls: ['./bill-recap.component.css']
+  selector: 'app-bill',
+  templateUrl: './bill.component.html',
+  styleUrls: ['./bill.component.css']
 })
-export class BillRecapComponent implements OnInit {
+export class BillComponent {
+  public delete(){
+    
+  }
 
   debtsBillResponse !: CustomResponse;
 

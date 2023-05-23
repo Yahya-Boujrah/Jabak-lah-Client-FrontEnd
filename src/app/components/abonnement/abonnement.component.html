@@ -1,29 +1,34 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <img src="../../../assets/maroc_telecom.jpg" class="img-fluid rounded-start" alt="...">
+            <img src="{{article.creditor.image}}" class="img-fluid rounded-start" alt="...">
         </div>
-        <div class="col">
+        <div class="col" *ngIf="debtsResponse?.data?.debts!.length !== 0; else nodebts">
             <div class="card-body">
                 <h4 class="card-title">
-                    MAROC TELECOM
+                    {{article.creditor.name.toUpperCase()}}
                 </h4> <br>
                 <h5 class="card-text">
-                    Payez vos factures Maroc Telecom
+                    Pay your bills of  {{article.creditor.name}}
                 </h5>
                 <br>
                 <ul *ngFor="let debt of debtsResponse?.data?.debts">
-                    <li >
-                        <h5 >{{debt.type}}</h5>
+                    <li *ngIf="!debt.added2Bill">
+                        <h5 [ngStyle]="debt.type == 'PENALTY' ? {'color': 'red', 'font-weight': 'bold'} : {'color': 'green', 'font-weight': 'bold'}">
+                            {{debt.type}}</h5>
                         <p>{{debt.name}} : {{debt.amount}} DH</p>
-                    </li>
+                    </li> 
                 </ul>
                 <div class="row">
-                    <div class="col-md-6 "> <a href="#" (click)="add2Bill(debtsResponse?.data?.debts)" 
+                    <div class="col-md-6 "> <a href="" (click)="add2Bill(debtsResponse?.data?.debts)" 
                             class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to bill</a> </div>
-                    <div class="col-md-5 "> <a href="#" class="btn btn-sm animated-button victoria-three" routerLink="/factures">Cancel</a> </div>
+                    <div class="col-md-5 "> <a href="" class="btn btn-sm animated-button victoria-three" 
+                        (click)="cancel()">Cancel</a> </div>
                 </div>
         </div>
+            <ng-template #nodebts class="col" *ngIf="debtsResponse?.data?.debts!.length === 0">
+                You have no debts to pay !
+            </ng-template>
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

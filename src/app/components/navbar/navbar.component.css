@@ -16,20 +16,13 @@ img{
 }
 
 .bottom-navbar{
-    background-color: #c0b8c0;
-    margin-top: 0%;
-}
-
-.bottom-navbar {
-  position: absolute;
-  top: 130%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   height: 50px;
   width: 100%;
-  padding: 0 340px;
+    background-color: #c0b8c0;
+    margin-top: 0%;
+    justify-content: space-evenly;
 }
+
 
 .bottom-navbar a {
   color: #f6f4e6;
@@ -38,10 +31,8 @@ img{
   text-transform: uppercase;
   font-weight: 500;
   display: inline-block;
-  width: 20px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  padding: 1px 50px;
 }
 
 .bottom-navbar a:hover {

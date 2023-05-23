@@ -27,9 +27,6 @@ export class CreditorsComponent implements OnInit {
     })
 
   }
-  recap(){
-    this.router.navigate(['bill-recap'] );
-  }
 
   history(){
     this.router.navigate(['history'] );

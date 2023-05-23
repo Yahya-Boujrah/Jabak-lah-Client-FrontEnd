@@ -5,15 +5,15 @@ import { RechargeComponent } from './components/recharge/recharge.component';
 import { CreditorsComponent } from './components/creditors/creditors.component';
 import { LoginComponent } from './components/login/login.component';
 import { AbonnementComponent } from './components/abonnement/abonnement.component';
-import { BillRecapComponent } from './components/bill-recap/bill-recap.component';
 import { BillHistoryComponent } from './components/bill-history/bill-history.component';
 import { AuthGuard } from './auth-guard.guard';
 
-import { FacturesComponent } from './components/factures/factures.component';
-import { ProduitsComponent } from './components/produits/produits.component';
+
 import { HomeComponent } from './components/home/home.component';
 import { DonationComponent } from './components/donation/donation.component';
+import { BillComponent } from './components/bill/bill.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ProductsComponent } from './components/products/products.component';
 
 
 const routes: Routes = [
@@ -38,7 +38,7 @@ const routes: Routes = [
             path: "creditors/donation" , component: DonationComponent
           },
           {
-            path: 'bill-recap', component: BillRecapComponent
+            path:'bill', component: BillComponent
           },
           {
             path:'history', component: BillHistoryComponent
@@ -49,7 +49,7 @@ const routes: Routes = [
             ]
           },
           {
-            path: "produits" , component: ProduitsComponent
+            path: "products" , component: ProductsComponent
           },
           
         ]
