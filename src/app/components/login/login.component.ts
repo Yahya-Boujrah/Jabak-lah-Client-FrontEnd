@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
         this.debtService.generateDebts$.pipe(take(1)).subscribe();
         this.billService.createBill$.subscribe();
-        this.router.navigate(['home']);
+        this.router.navigate(['navigation']);
 
       } else {
         alert("Authentication failed");

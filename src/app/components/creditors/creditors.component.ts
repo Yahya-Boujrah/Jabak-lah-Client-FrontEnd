@@ -35,10 +35,5 @@ export class CreditorsComponent implements OnInit {
     this.router.navigate(['history'] );
   }
 
-  LogOut(){
-    this.billService.deleteBill$.subscribe();
-    sessionStorage.removeItem('token');
-    this.router.navigate([''] );
-  }
 
 }

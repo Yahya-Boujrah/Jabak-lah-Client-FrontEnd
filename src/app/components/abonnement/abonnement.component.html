@@ -1,13 +1,42 @@
-<div *ngFor="let debt of debtsResponse?.data?.debts">
-    <div *ngIf="debt.type === 'DEBT'"> 
-        Debt: {{debt.name}}
-        Amount: {{debt.amount}} DH
-        <button class="btn btn-primary" (click)="add2Bill(debt)" >Add to bill</button>
-    </div>
-    <div *ngIf="debt.type === 'PENALTY'"> 
-        Penalty: {{debt.name}}
-        Amount: {{debt.amount}} DH
-        <button class="btn btn-danger"  (click)="add2Bill(debt)" >Add to bill</button>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="../../../assets/maroc_telecom.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <h4 class="card-title">
+                    MAROC TELECOM
+                </h4> <br>
+                <h5 class="card-text">
+                    Payez vos factures Maroc Telecom
+                </h5>
+                <br>
+                <ul *ngFor="let debt of debtsResponse?.data?.debts">
+                    <li >
+                        <h5 >{{debt.type}}</h5>
+                        <p>{{debt.name}} : {{debt.amount}} DH</p>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-md-6 "> <a href="#" (click)="add2Bill(debtsResponse?.data?.debts)" 
+                            class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to bill</a> </div>
+                    <div class="col-md-5 "> <a href="#" class="btn btn-sm animated-button victoria-three" routerLink="/factures">Cancel</a> </div>
+                </div>
+        </div>
     </div>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <img src="../../../assets/verification.png" id="image"><br><br>
+                <h6 id="text">Votre Demmande est bien effectué !</h6>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

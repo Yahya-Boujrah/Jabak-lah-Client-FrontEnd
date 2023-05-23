@@ -63,17 +63,19 @@ body {
     width: 100%;
     height: 100%;
   }
+  .w-250{
+    width: 250px !important;
+  }
 
   .form__input {
     width: 350px;
     height: 40px;
-    margin: 4px 0;
+    margin: 10px 0;
     padding-left: 25px;
     font-size: 13px;
     letter-spacing: 0.15px;
     border: none;
     outline: none;
-    font-family: "Montserrat", sans-serif;
     background-color: #ecf0f3;
     transition: 0.25s ease;
     border-radius: 8px;

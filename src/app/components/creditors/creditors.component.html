@@ -1,5 +1,5 @@
-<div>
-    <button (click)="LogOut()">Log Out</button>
+<!-- <div> -->
+<!-- <button (click)="LogOut()">Log Out</button>
     <div class="row"> 
         <div class="card col-4" style="width: 18rem;" *ngFor="let creditor of creditorResponse?.data?.creditors">
             <img src="{{creditor.image}}" class="card-img-top" alt="...">
@@ -12,5 +12,27 @@
     </div>
     <button (click)="recap()">Go to payment</button>
     <br>
-    <button (click)="history()">Bill History</button>
+    <button (click)="history()">Bill History</button> -->
+
+<div class="container d-flex creditors" >
+    <div class="card mb-3" *ngFor="let creditor of creditorResponse?.data?.creditors">
+        <div class="row">
+            <div class="col-md-4 img">
+                <img src="{{creditor.image}}" loading="lazy" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{creditor.name!.toUpperCase()}}
+                    </h5>
+                    <p class="card-text">
+                        {{creditor.description}}
+                    </p>
+                    <ul>
+                        <app-articles [creditorId]="creditor.id"></app-articles>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

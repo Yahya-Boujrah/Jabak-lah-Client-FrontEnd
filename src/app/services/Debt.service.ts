@@ -19,7 +19,7 @@ export class DebtService {
   constructor(private http: HttpClient) {}
 
   generateDebts$ = <Observable<CustomResponse>>
-    this.http.post<CustomResponse>(`${this.apiUrl}/articles/debts/generate`, null )
+    this.http.post<CustomResponse>(`${this.apiUrl}/articles/debts/generate`, null , httpOptions)
     .pipe(
       tap(console.log)
     );
@@ -37,8 +37,8 @@ export class DebtService {
         )
 
   
-  bindDebtToBill$ = (debtId: number) => <Observable<CustomResponse>>
-    this.http.put<CustomResponse>(`${this.apiUrl}/bind/${debtId}`, null)
+  bindDebtToBill$ = (debtIds: number[]) => <Observable<CustomResponse>>
+    this.http.put<CustomResponse>(`${this.apiUrl}/bind/${debtIds}`, null, httpOptions)
     .pipe(
       tap(console.log)
     )

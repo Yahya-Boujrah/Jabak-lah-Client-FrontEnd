@@ -27,11 +27,14 @@ export class ArticlesComponent implements OnInit {
   navigate(article: Article){
  
      if(article.type == 'ARTICLE_RECHARGE'){
-      this.router.navigate(['recharge'],  {state: { article: article }} );
+      this.router.navigate(['recharge'],  {relativeTo: this.route, state: { article: article }} );
      }
 
      if(article.type == 'ARTICLE_ABONNEMENT'){
-      this.router.navigate(['abonnement'],  {state: { articleId: article.id }} );
+      this.router.navigate(['abonnement'],  {relativeTo: this.route, state: { articleId: article.id }} );
+     }
+     if(article.type == 'ARTICLE_EAU'){
+      this.router.navigate(['abonnement'],  {relativeTo: this.route, state: { articleId: article.id }} );
      }
   }
 

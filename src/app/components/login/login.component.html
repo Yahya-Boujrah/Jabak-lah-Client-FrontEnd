@@ -3,9 +3,26 @@
     <div class="container a-container" id="a-container">
       <form class="form" id="a-form">
         <h2 class="form_title title">Create Account</h2>
-        <input class="form__input" type="text" placeholder="Name">
-        <input class="form__input" type="text" placeholder="Email">
-        <input class="form__input" type="password" placeholder="Password">
+        <div class="row m-1 g-2">
+          <div class="col"><input type="text" placeholder="Last Name" class="form__input w-250" ngModel name="lastName" required></div>
+          <div class="col"> <input type="text" placeholder="First Name " class="form__input w-250" ngModel name="firstName" required></div>
+        </div>
+        <div class="row m-1 g-2">
+          <div class="col"><input type="text" placeholder="Username" class="form__input w-250" ngModel name="username" required></div>
+          <div class="col"> <input type="text" placeholder="CIN" class="form__input w-250" ngModel name="cin" required></div>
+        </div>
+        <div class="row m-1 g-2">
+          <div class="col"><input type="text" placeholder="Phone Number" class="form__input w-250" ngModel name="phone" required></div>
+          <div class="col"> <input class="form__input w-250" type="text" ngModel name="email" placeholder="Email" required></div>
+        </div>
+        
+        
+        <select class="form__input m-1 g-2"  name="accountType" required>
+          <option value="Plafond_200DH" selected>Hssab 1 - Plafond : 200 DH</option>
+          <option value="Plafond_5000DH">Hssab 2 - Plafond : 5000 DH</option>
+          <option value="Plafond_20000DH">Hssab 3 - Plafond : 20000 DH</option>
+        </select>
+        <input class="form__input m-1 g-2" type="password" placeholder="Password">
         <button class="form__button button submit">SIGN UP</button>
       </form>
     </div>
@@ -15,8 +32,8 @@
         <h2 class="form_title title">LOGIN</h2>
         <input class="form__input" type="text" placeholder="Phone Number" ngModel name="phone">
         <input class="form__input" type="password" placeholder="Password" ngModel name="password">
-        <a class="form__link">Forgot your password?</a>
-        <button class="form__button button submit" (click)="login(loginForm)" >SIGN IN</button>
+        <!-- <a class="form__link">Forgot your password?</a> -->
+        <button class="form__button button submit" (click)="login(loginForm)">SIGN IN</button>
       </form>
     </div>
 

@@ -1,6 +1,9 @@
-<ul *ngFor="let article of articleResponse?.data?.articles">
-    <li><a (click)="navigate(article)" style="cursor: pointer;">
-        {{article.name}}
+<div >
+    <li *ngFor="let article of articleResponse?.data?.articles">
+
+        <a (click)="navigate(article)" class="card-link" style="cursor: pointer;">
+            {{article.name}}
         </a>
+        
     </li>
-</ul>
+</div>
