@@ -17,10 +17,14 @@ export class NavbarComponent {
     this.router.navigate(['creditors'], {relativeTo: this.route});
   }
   products(){
-    this.router.navigate(['products'], {relativeTo: this.route});
+    this.router.navigate(['delivery'], {relativeTo: this.route});
   }
   bill(){
     this.router.navigate(['bill'], {relativeTo: this.route});
+  }
+
+  orders(){
+    this.router.navigate(['orders'], {relativeTo: this.route});
   }
   LogOut(){
     this.billService.deleteBill$.subscribe();

@@ -17,12 +17,12 @@
                         <h5 [ngStyle]="debt.type == 'PENALTY' ? {'color': 'red', 'font-weight': 'bold'} : {'color': 'green', 'font-weight': 'bold'}">
                             {{debt.type}}</h5>
                         <p>{{debt.name}} : {{debt.amount}} DH</p>
-                    </li> 
+                    </li>
                 </ul>
                 <div class="row">
-                    <div class="col-md-6 "> <a (click)="add2Bill(debtsResponse?.data?.debts)" 
+                    <div class="col-md-6 "> <a (click)="add2Bill(debtsResponse?.data?.debts)"
                             class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to bill</a> </div>
-                    <div class="col-md-5 "> <a  class="btn btn-sm animated-button victoria-three" 
+                    <div class="col-md-5 "> <a  class="btn btn-sm animated-button victoria-three"
                         (click)="cancel()">Cancel</a> </div>
                 </div>
         </div>

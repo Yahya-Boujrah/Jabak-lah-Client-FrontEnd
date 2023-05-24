@@ -17,45 +17,47 @@
     </div>
   </nav>
 
-  
   <nav class="navbar bottom-navbar">
-    <a (click)="creditors()" class="nav-link">
-      <span class="menu-title">Creditors</span>
+    <a (click)="creditors()" routerLinkActive="router-link-active" class="nav-link">
+        <span class="menu-title">Creditors</span>
     </a>
-    <a (click)="products()" class="nav-link">
-      <span class="menu-title">Products</span>
+    <a (click)="products()" routerLinkActive="router-link-active"  class="nav-link">
+        <span class="menu-title">Products</span>
     </a>
-    <a (click)="bill()" class="nav-link">
+    <a (click)="bill()" routerLinkActive="router-link-active"  class="nav-link">
       <span class="menu-title">Bill</span>
-    </a>
-    <a (click)="LogOut()" class="nav-link">
+  </a>
+    <a  (click)="orders()" routerLinkActive="router-link-active"  class="nav-link">
+      <span class="menu-title">Orders</span>
+  </a>
+    <a  (click)="LogOut()" routerLinkActive="router-link-active"  class="nav-link">
       <span class="menu-title">Logout</span>
     </a>
-    <div class="dot"></div>
+  <div class="dot"></div>
   </nav>
 </div>
 
- <!-- Modal -->
- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="staticBackdropLabel">PAYMENT</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">        
-          <form>
-            Accepted Card <br>
-            <img src="../../../assets/card1.png" class="modal-img">
-            <img src="../../../assets/card2.png" class="modal-img">
-            <br><br>
+      <div class="modal-body">
+        <form>
+          Accepted Card <br>
+          <img src="../../../assets/card1.png" class="modal-img">
+          <img src="../../../assets/card2.png" class="modal-img">
+          <br><br>
 
-            Credit card number
-            <input type="text" name="" placeholder="Enter card number">
+          Credit card number
+          <input type="text" name="" placeholder="Enter card number">
 
-            Exp month
-            <input type="text" name="" placeholder="Enter Month">
-            <div id="zip">
+          Exp month
+          <input type="text" name="" placeholder="Enter Month">
+          <div id="zip">
               <span>
                 Exp year
                 <select>
@@ -66,16 +68,16 @@
                   <option>2025</option>
                 </select>
               </span>
-              <span>
+            <span>
                 CVV
                 <input type="number" name="" placeholder="CVV">
               </span>
-            </div>
-          </form>
-          <div class="row">
-            <input type="submit" name="" value="Proceed to Checkout">
-            <input type="submit" data-bs-dismiss="modal" value="Close">
           </div>
+        </form>
+        <div class="row">
+          <input type="submit" name="" value="Proceed to Checkout">
+          <input type="submit" data-bs-dismiss="modal" value="Close">
+        </div>
       </div>
     </div>
   </div>

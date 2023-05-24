@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Total Price</th>
+    <th>Status</th>
+    <th>Tracking Number</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of response?.data?.orders">
+    <td>{{ order.id }}</td>
+    <td>{{ order.totalPrice }}</td>
+    <td>{{ order.status }}</td>
+    <td>{{ order.orderTrackingNumber }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+{{response | json}}
