@@ -8,13 +8,15 @@ import { AbonnementComponent } from './components/abonnement/abonnement.componen
 import { BillHistoryComponent } from './components/bill-history/bill-history.component';
 import { AuthGuard } from './auth-guard.guard';
 
-
 import { HomeComponent } from './components/home/home.component';
 import { DonationComponent } from './components/donation/donation.component';
 import { BillComponent } from './components/bill/bill.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { ProductsComponent } from './components/products/products.component';
 import { ClientInfoComponent } from './components/client-info/client-info.component';
+import {ProductCategoryMenuComponent} from "./components/product-category-menu/product-category-menu.component";
+import {ProductListComponent} from "./components/product-list/product-list.component";
+import {ProductDetailsComponent} from "./components/product-details/product-details.component";
+import {OrderTableComponent} from "./components/order-table/order-table.component";
 
 
 const routes: Routes = [
@@ -27,14 +29,14 @@ const routes: Routes = [
         path: "navigation" , component: NavigationComponent, children:[
           {
             path: '', component:HomeComponent
-          }, 
+          },
           {
             path: 'creditors/recharge', component: RechargeComponent
           },
            {
             path: "creditors/abonnement" , component: AbonnementComponent
           },
-          
+
           {
             path: "creditors/donation" , component: DonationComponent
           },
@@ -46,19 +48,27 @@ const routes: Routes = [
           },
           {
             path: "creditors" , component: CreditorsComponent, children:[
-           
+
             ]
           },
           {
             path: 'infos', component:ClientInfoComponent
           },
           {
-            path: "products" , component: ProductsComponent
+            path: 'orders', component:OrderTableComponent
           },
-          
+          {
+            path:'delivery', component:ProductCategoryMenuComponent, children : [
+              {path: 'category/:id', component: ProductListComponent},
+              {path: 'search/:keyword', component: ProductListComponent},
+              {path: 'category', component: ProductListComponent},
+              {path : 'products/:id', component : ProductDetailsComponent}
+            ]
+          },
+
         ]
       },
-   
+
     ]
   },
   {path: '**', redirectTo:''}
