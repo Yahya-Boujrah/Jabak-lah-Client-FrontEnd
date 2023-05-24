@@ -1,14 +1,43 @@
-<div class="container" *ngFor="let bill of billHistory?.data?.bills">
-    <div class="card">
-        <div class="card-header">
-            {{bill.id}}
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Amount: {{bill.totalAmount}} DH</h5>
-            <p class="card-text">Creation date: {{bill.createdAt}}</p>
-            <p>Debts: {{bill.debts}}</p>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-4 mb-lg-0">
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush rounded-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <div class="col-sm-10">
+                                <h3 class="mb-0">
+                                    <strong> Bills History</strong>
+                                </h3>
+                            </div>
+                        </li>
+                        <div class="row my-2 mx-1 justify-content-center">
+                            <table class="table table-striped table-borderless">
+                                <thead style="background-color:#6d4779 ;" class="text-white">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Creation date</th>
+                                        <th scope="col">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let bill of billHistory?.data?.bills">
+                                    <tr >
+                                        <th scope="row">{{bill.id}}</th>
+                                        <td>{{bill.createdAt!.toString().split("T")[0]}}</td>
+                                        <td>{{bill.totalAmount}} DH</td>
+                                       
+                                    </tr>
+                                </tbody>
+                                <tbody *ngIf="billHistory?.data?.bills!.length === 0">
+                                    <tr>
+                                        <th scope="row">Nothing Here</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
-
 </div>

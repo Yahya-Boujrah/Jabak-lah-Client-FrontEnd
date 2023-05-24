@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/services/Login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
   authToken !: string;
 
   constructor(private authService: LoginService, private debtService: DebtService,
@@ -39,9 +39,15 @@ export class LoginComponent implements OnInit {
       }
     })
   }
-  ngOnInit(){
+
+  register(form: NgForm){
+    this.authService.register(form.value).subscribe(response =>{
+      alert("success");
+    })
+    form.reset();
 
   }
+  
 
   switch(){
     let switchCtn = document.querySelector("#switch-cnt") as HTMLElement;

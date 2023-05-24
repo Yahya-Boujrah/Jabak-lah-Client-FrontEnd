@@ -30,8 +30,11 @@ export class ArticlesComponent implements OnInit {
       this.router.navigate(['recharge'],  {relativeTo: this.route, state: { article: article }} );
      }
 
-     if(article.type == 'ARTICLE_ABONNEMENT' || article.type == 'ARTICLE_EAU'){
+     if(article.type === 'ARTICLE_ABONNEMENT' || article.type === 'ARTICLE_EAU' || article.type === 'ARTICLE_ELECTRICITE'){
       this.router.navigate(['abonnement'],  {relativeTo: this.route, state: { articleId: article.id, article:article }} );
+     }
+     if(article.type === 'CHARITY'){
+      this.router.navigate(['donation'],  {relativeTo: this.route, state: { article: article }} );
      }
   }
 

@@ -1,25 +1,18 @@
-.container d-flex mt-4 p-4{
-    margin: 30px 80px;
-    padding-top: 40px;
-    background-color: rgb(203, 212, 208);
+.creditors{
+ 
     display: flex;
-    column-count: 2;
+    flex-wrap: wrap;
 }
 
 .card{
     margin: 20px;
     align-items: center;
     justify-content: center;
-    flex: 1;
-
+    flex: 1 1 40%;
 }
 .img{
     padding: 20px;
 }
-/* 
-#Radeema{
-  height: 80px;
-} */
  
   .text {
     font-size: 20px;

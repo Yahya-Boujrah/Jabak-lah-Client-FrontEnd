@@ -14,6 +14,7 @@ import { DonationComponent } from './components/donation/donation.component';
 import { BillComponent } from './components/bill/bill.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ClientInfoComponent } from './components/client-info/client-info.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,9 @@ const routes: Routes = [
             path: "creditors" , component: CreditorsComponent, children:[
            
             ]
+          },
+          {
+            path: 'infos', component:ClientInfoComponent
           },
           {
             path: "products" , component: ProductsComponent

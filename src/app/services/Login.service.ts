@@ -1,25 +1,41 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Subject, tap} from "rxjs";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {BehaviorSubject, Subject, tap} from "rxjs";
 import {User} from "../interfaces/User.interface";
 import {AuthResponse} from "../interfaces/Auth-response";
+import { CustomResponse } from '../interfaces/Custom-response';
+import { Prospect } from '../interfaces/prospect.interface';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  user = new Subject<User>();
+  private client$ = new BehaviorSubject<any>(null);
+  currentClient$ = this.client$.asObservable();
 
   private readonly URL : string = 'http://localhost:8080/api/auth';
 
   constructor(private http : HttpClient) { }
 
   authenticate(username : string, password : string){
-    return this.http.post<AuthResponse>(`${this.URL}/authenticate`, { username : username, password : password})
+    return this.http.post<AuthResponse>(`${this.URL}/authenticate`, { username : username, password : password},httpOptions )
       .pipe(tap(response =>{
-        const user : User = response.user;
-        this.user.next(user);
+        const client : User = response.user;
+        this.client$.next(client);
       }));
+  }
+
+  register(prospect : Prospect){
+    return this.http.post<CustomResponse>(`${this.URL}/register`,prospect, httpOptions )
+      .pipe(tap(
+        console.log
+      ));
   }
 }

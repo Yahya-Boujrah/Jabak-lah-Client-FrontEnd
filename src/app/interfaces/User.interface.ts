@@ -7,5 +7,5 @@ export interface User {
     email?:string;
     accountType?:string;
     balance?:number;
-
+    cin?:string;
 }

@@ -27,4 +27,10 @@ export class NavbarComponent {
     sessionStorage.removeItem('token');
     this.router.navigate([''] );
   }
+  billHistory(){
+    this.router.navigate(['history'], {relativeTo: this.route});
+  }
+  infos(){
+    this.router.navigate(['infos'], {relativeTo: this.route});
+  }
 }

@@ -1,1 +1,51 @@
-<p>client-info works!</p>
+<div class="container infos">
+    <h1>
+       Client information
+    </h1>
+    <div class="infos-body row">
+        <div class=" col">
+            <div class="labelInfo">
+                Last Name
+            </div>
+            <div class="valeurInfo">
+                {{client.lastName}}</div>
+            <div class="labelInfo">
+                First Name
+            </div>
+            <div class="valeurInfo">
+                {{client.firstName}} </div>
+            <div class="labelInfo">
+                CIN
+            </div>
+            <div class="valeurInfo">
+                {{client.cin}} </div>
+            <div class="labelInfo">
+                Balance
+            </div>
+            <div class="valeurInfo">
+                {{client.balance}} DH</div>
+            </div>    
+            <div class=" col">
+            <div class="labelInfo">
+                Email
+            </div>
+            <div class="valeurInfo">
+                {{client.email}}
+            </div>
+            <div class="labelInfo">
+                Phone number
+            </div>
+            <div class="valeurInfo">
+                {{client.phone!.split(':')[0]}}
+            </div>
+            <div class="labelInfo">
+                Acoount Type
+            </div>
+            <div class="valeurInfo">
+                {{client.accountType}}
+            </div>
+
+        </div>
+    </div>
+
+</div>

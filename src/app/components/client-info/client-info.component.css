@@ -1,0 +1,35 @@
+.infos{
+    padding: 30px;
+ 
+    /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.26); */
+
+}
+.infos-body{
+    padding: 20px
+}
+
+h1{
+    color: #f6f4e6;
+    text-shadow: 0 0 6px rgba(0,0,0,0.3);
+    font-size: 24pt;
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: #6d4779;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.labelInfo {
+    margin-top: 0;
+    color: #AAA;
+    font-weight: 500;
+}
+.valeurInfo {
+    margin-bottom: 10px;
+    margin-top: 2px;
+    font-size: 13pt;
+    color: #580563;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

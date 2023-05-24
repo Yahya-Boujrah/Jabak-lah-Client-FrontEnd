@@ -19,7 +19,7 @@ img{
 
 /* button css  */
 
-a.animated-button:link:hover, a.animated-button:visited:hover {
+a.animated-button:hover, a.animated-button:visited:hover {
 	color: #8e13d1;
 	text-shadow: none;
 }

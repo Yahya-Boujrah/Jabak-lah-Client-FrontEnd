@@ -1,6 +1,6 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg-12">
       <div class="card mb-4 mb-lg-0">
         <div class="card-body p-0">
           <ul class="list-group list-group-flush rounded-3">
@@ -26,7 +26,7 @@
                     <th scope="row">{{item.id}}</th>
                     <td>{{item.name}}</td>
                     <td>{{item.amount}} DH</td>
-                    <td><a (click)="delete()" href="#" id="delete"><img src="../../../assets/delete-icon.jpg"></a></td>
+                    <td><a (click)="delete()" id="delete"><img src="../../../assets/delete-icon.jpg"></a></td>
                   </tr>
                 </tbody>
                 <tbody *ngIf=" debtsBillResponse?.data?.debts?.length === 0">
@@ -37,18 +37,21 @@
               </table>
             </div>
           </ul>
-          <div class="row">
+          <div class="row" style="margin: 12px">
             <div class="col">
               <h4>Total : </h4>
             </div>
             <div class="col-md-3">
-              <h4> 1000 DH</h4>
+              <h4> 0 DH</h4>
             </div>
           </div>
         </div>
       </div>
+      <div  class="button">
+        <button class="btn btn-sm pay-button " (click)="payBill()" [disabled]=" debtsBillResponse?.data?.debts?.length === 0">Pay Bill</button>
     </div>
-    <div class="col-lg-5">
+    </div>
+    <!-- <div class="col-lg-5">
       <div class="card mb-4">
         <div class="card-body">
           <div class="container">
@@ -87,53 +90,8 @@
               <a href="#" class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal"
                 data-bs-target="#exampleModal" id="pay">Pay</a>
 
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <div class="right">
-                        <h3>PAYMENT</h3>
-                        <form>
-                          Accepted Card <br>
-                          <img src="../../../assets/card1.png" width="100">
-                          <img src="../../../assets/card2.png" width="50">
-                          <br><br>
-
-                          Credit card number
-                          <input type="text" name="" placeholder="Enter card number">
-
-                          Exp month
-                          <input type="text" name="" placeholder="Enter Month">
-                          <div id="zip">
-                            <label>
-                              Exp year
-                              <select>
-                                <option>Choose Year..</option>
-                                <option>2022</option>
-                                <option>2023</option>
-                                <option>2024</option>
-                                <option>2025</option>
-                              </select>
-                            </label>
-                            <label>
-                              CVV
-                              <input type="number" name="" placeholder="CVV">
-                            </label>
-                          </div>
-                        </form>
-                        <div class="row">
-                          <input type="submit" name="" value="Proceed to Checkout">
-                          <input type="submit" data-bs-dismiss="modal" value="Close">
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+            <!-- </div>
+          </div> -->
         </div>
       </div>
