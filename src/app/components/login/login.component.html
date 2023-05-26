@@ -22,7 +22,6 @@
           <option value="Plafond_20000DH">Hssab 3 - Plafond : 20000 DH</option>
           <option value="Plafond_50000DH">Hssab 4 - Plafond : 50000 DH</option>
         </select>
-        <input class="form__input m-1 g-2" type="password" ngModel name="password"  placeholder="Password">
         <button class="form__button button submit" (click)="register(signupForm)" [disabled]="signupForm.invalid">SIGN UP</button>
       </form>
     </div>
@@ -30,8 +29,8 @@
     <div class="container b-container" id="b-container">
       <form class="form" id="b-form" #loginForm="ngForm">
         <h2 class="form_title title">LOGIN</h2>
-        <input class="form__input" type="text" placeholder="Phone Number" ngModel name="phone">
-        <input class="form__input" type="password" placeholder="Password" ngModel name="password">
+        <input class="form__input" type="text" placeholder="Phone Number" ngModel name="phone" required>
+        <input class="form__input" type="password" placeholder="Password" ngModel name="password" required>
         <button class="form__button button submit" (click)="login(loginForm)" [disabled]="loginForm.invalid">SIGN IN</button>
       </form>
     </div>

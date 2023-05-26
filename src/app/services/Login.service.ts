@@ -17,8 +17,8 @@ const httpOptions = {
 })
 export class LoginService {
 
-  private client$ = new BehaviorSubject<any>(null);
-  currentClient$ = this.client$.asObservable();
+  // private client$ = new BehaviorSubject<any>(null);
+  // currentClient$ = this.client$.asObservable();
 
   private readonly URL : string = 'http://localhost:8080/api/auth';
 
@@ -28,7 +28,7 @@ export class LoginService {
     return this.http.post<AuthResponse>(`${this.URL}/authenticate`, { username : username, password : password},httpOptions )
       .pipe(tap(response =>{
         const client : User = response.user;
-        this.client$.next(client);
+        // this.client$.next(client);
       }));
   }
 

@@ -41,7 +41,7 @@ export class RechargeComponent implements OnInit {
 
 
   cancel(){
-    this.router.navigate(['navigation/creditors']);
+    this.router.navigate(['navigation']);
   }
 
 }

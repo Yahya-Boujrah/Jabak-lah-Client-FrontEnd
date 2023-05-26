@@ -28,17 +28,17 @@ const routes: Routes = [
       {
         path: "navigation" , component: NavigationComponent, children:[
           {
-            path: '', component:HomeComponent
+            path: "" , component: CreditorsComponent
           },
           {
-            path: 'creditors/recharge', component: RechargeComponent
+            path: 'recharge', component: RechargeComponent
           },
            {
-            path: "creditors/abonnement" , component: AbonnementComponent
+            path: "abonnement" , component: AbonnementComponent
           },
 
           {
-            path: "creditors/donation" , component: DonationComponent
+            path: "donation" , component: DonationComponent
           },
           {
             path:'bill', component: BillComponent
@@ -46,11 +46,7 @@ const routes: Routes = [
           {
             path:'history', component: BillHistoryComponent
           },
-          {
-            path: "creditors" , component: CreditorsComponent, children:[
-
-            ]
-          },
+          
           {
             path: 'infos', component:ClientInfoComponent
           },
@@ -61,7 +57,7 @@ const routes: Routes = [
             path:'delivery', component:ProductCategoryMenuComponent, children : [
               {path: 'category/:id', component: ProductListComponent},
               {path: 'search/:keyword', component: ProductListComponent},
-              {path: 'category', component: ProductListComponent},
+              {path: '', component: ProductListComponent},
               {path : 'products/:id', component : ProductDetailsComponent}
             ]
           },

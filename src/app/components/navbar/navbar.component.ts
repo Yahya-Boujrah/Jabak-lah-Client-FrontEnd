@@ -14,7 +14,7 @@ export class NavbarComponent {
 
 
   creditors(){
-    this.router.navigate(['creditors'], {relativeTo: this.route});
+    this.router.navigate(['navigation']);
   }
   products(){
     this.router.navigate(['delivery'], {relativeTo: this.route});

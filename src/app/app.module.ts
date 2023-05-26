@@ -13,10 +13,9 @@ import { AuthInterceptorService } from './services/Auth-interceptor.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AbonnementComponent } from './components/abonnement/abonnement.component';
-import { RechargeComponent } from './components/recharge/recharge.component';
+
 import { DonationComponent } from './components/donation/donation.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-
 import { BillComponent } from './components/bill/bill.component';
 import {ProductListComponent} from "./components/product-list/product-list.component";
 import {ProductCategoryMenuComponent} from "./components/product-category-menu/product-category-menu.component";
@@ -24,6 +23,7 @@ import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {SearchComponent} from "./components/search/search.component";
 import {ProductDetailsComponent} from "./components/product-details/product-details.component";
 import { OrderTableComponent } from './components/order-table/order-table.component';
+import { RechargeComponent } from './components/recharge/recharge.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { OrderTableComponent } from './components/order-table/order-table.compon
     HomeComponent,
     DonationComponent,
     NavigationComponent,
-    RechargeComponent,
     DonationComponent,
     BillComponent,
     ProductListComponent,

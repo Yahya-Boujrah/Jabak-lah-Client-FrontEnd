@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomResponse } from 'src/app/interfaces/Custom-response';
 import { BillService } from 'src/app/services/Bill.service';
 
@@ -14,7 +15,7 @@ export class BillComponent {
 
   debtsBillResponse !: CustomResponse;
 
-  constructor(private billService: BillService){}
+  constructor(private billService: BillService , private router: Router){}
 
   ngOnInit(): void {
     this.billService.debtsBill$.subscribe(response =>{
@@ -26,4 +27,8 @@ export class BillComponent {
     this.billService.payBill$.subscribe()
 
   }
+  cancel(){
+    this.router.navigate(['navigation']);
+  }
+
 }

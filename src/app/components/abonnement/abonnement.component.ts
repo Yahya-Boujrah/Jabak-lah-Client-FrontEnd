@@ -16,6 +16,7 @@ import { DebtService } from 'src/app/services/Debt.service';
 export class AbonnementComponent implements OnInit{
   articleId!: number;
   article!: Article;
+  added2Bill :boolean = false;
 
   debtsResponse !: CustomResponse;
 
@@ -35,18 +36,6 @@ export class AbonnementComponent implements OnInit{
     
   }
 
-  // add2Bill(){
-  //   this.debtsResponse?.data?.debts!.forEach(debt => {
-  //     this.debtService.bindDebtToBill$(debt.id as number).subscribe(response => {
-  //       this.dataSubject.next(
-  //         {...response, data: 
-  //           { debts: this.dataSubject.value.data.debts.filter( (db: { id: number | undefined; }) => db.id !== debt.id)}
-  //         }
-  //       )
-  //       this.debtsResponse = this.dataSubject.value;
-  //   })
-  //   });
-  
   add2Bill(debts: Debt[] | undefined){
     let ids :number[] = [];
     console.log(debts);
@@ -54,12 +43,20 @@ export class AbonnementComponent implements OnInit{
       debts!.forEach(debt => {ids.push(debt.id as number);
         debt.added2Bill= true;
       });
-      this.debtService.bindDebtToBill$(ids).subscribe();      
+      this.debtService.bindDebtToBill$(ids).subscribe(
+        response => {
+          this.dataSubject.next(
+            null
+          )
+          this.debtsResponse = this.dataSubject.value;
+        }
+      );
+      this.added2Bill = true;      
     } 
   } 
   
   cancel(){
-    this.router.navigate(['/navigation/creditors']);
+    this.router.navigate(['navigation']);
 
   }
 }

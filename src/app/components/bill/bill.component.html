@@ -48,6 +48,7 @@
         </div>
       </div>
       <div  class="button">
+          <button class="btn btn-sm pay-button " (click)="cancel()">Cancel</button>
         <button class="btn btn-sm pay-button " (click)="payBill()" [disabled]=" debtsBillResponse?.data?.debts?.length === 0">Pay Bill</button>
     </div>
     </div>

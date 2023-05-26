@@ -5,6 +5,7 @@ import { Debt } from "./Debt.interface";
 import {Product} from "./product";
 import {ProductCategory} from "./product-category";
 import {Order} from "./Order";
+import { User } from "./User.interface";
 
 
 export interface CustomResponse {
@@ -19,7 +20,8 @@ export interface CustomResponse {
             pcategory? : ProductCategory,
             pcategories? : ProductCategory[],
             paymentIntent?: any,
-            orders?: Order[]
+            orders?: Order[],
+            client?: User
 
         };
 }

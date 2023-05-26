@@ -11,7 +11,7 @@
   <tr *ngFor="let order of response?.data?.orders">
     <td>{{ order.id }}</td>
     <td>{{ order.totalPrice }}</td>
-    <td>{{ order.status }}</td>
+    <td><span class="badge mb-0" >{{ order.status }}</span></td>
     <td>{{ order.orderTrackingNumber }}</td>
   </tr>
   </tbody>

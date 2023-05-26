@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-donation',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class DonationComponent {
   don:number = 50;
+
+  constructor(private router: Router, private route: ActivatedRoute) {}
+  cancel(){
+    this.router.navigate(['navigation']);
+  }
+
 }

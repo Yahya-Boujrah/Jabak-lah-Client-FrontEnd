@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomResponse } from 'src/app/interfaces/Custom-response';
 import { User } from 'src/app/interfaces/User.interface';
-import { LoginService } from 'src/app/services/Login.service';
+import { ClientService } from 'src/app/services/Client.service';
+
 
 @Component({
   selector: 'app-client-info',
@@ -9,13 +11,13 @@ import { LoginService } from 'src/app/services/Login.service';
 })
 export class ClientInfoComponent implements OnInit {
 
-  constructor(private loginService: LoginService){}
+  constructor(private clientService: ClientService){}
 
-  client !: User;
+  client ?: User;
 
   ngOnInit(): void {
-    this.loginService.currentClient$.subscribe(result => {
-      this.client = result;
+    this.clientService.client$.subscribe(result => {
+      this.client = result.data.client;
     })
   }
 }

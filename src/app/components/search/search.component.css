@@ -1,0 +1,61 @@
+.au-input-xl{
+    min-width:500px
+}
+
+input.au-input.au-input-xl{
+    border-radius:40px!important;
+    margin-right:15px
+}
+
+.au-input{
+    line-height:43px;
+  
+    border: none;
+    font-size:14px;
+    color:#666;
+    padding:0 17px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    -webkit-transition:all .5s ease;
+    -o-transition:all .5s ease;
+    -moz-transition:all .5s ease;
+    transition:all .5s ease
+}
+.au-input:focus-visible{
+       border:1px solid #e5e5e5;
+}
+
+
+.form-header{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    padding: 30px;
+}
+
+button.btn-submit:hover {
+	color: #8e13d1;
+	text-shadow: none;
+}
+
+button.btn-submit, button.btn-submit:visited {
+	width: 100px;
+	margin: 15px;
+	padding: 7px ;
+	color: #000000;
+	font-size:14px;
+	border-radius: 10px;
+	font-weight: bold;	
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+button.btn-submit {
+	border: 2px solid #4b125c;
+}
+
+

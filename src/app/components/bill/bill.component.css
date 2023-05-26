@@ -9,7 +9,7 @@ button.pay-button:hover {
 
 button.pay-button, button.pay-button:visited {
 	width: 160px;
-	margin: 30px;
+	margin: 15px;
 	padding: 14px 15px;
 	color: #000000;
 	font-size:14px;

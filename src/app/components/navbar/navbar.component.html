@@ -8,9 +8,7 @@
       <a class="nav-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         <span class="menu-title">Charge</span>
       </a>
-      <a (click)="infos()" class="nav-item">
-        <span class="menu-title">Infos</span>
-      </a>
+    
       <a (click)="billHistory()" class="nav-item">
         <span class="menu-title">Bills History</span>
       </a>
@@ -18,27 +16,31 @@
   </nav>
 
   <nav class="navbar bottom-navbar">
-    <a (click)="creditors()" routerLinkActive="router-link-active" class="nav-link">
-        <span class="menu-title">Creditors</span>
+    <a (click)="creditors()" class="nav-link">
+      <span class="menu-title">Creditors</span>
     </a>
-    <a (click)="products()" routerLinkActive="router-link-active"  class="nav-link">
-        <span class="menu-title">Products</span>
+    <a (click)="products()" class="nav-link">
+      <span class="menu-title">Products</span>
     </a>
-    <a (click)="bill()" routerLinkActive="router-link-active"  class="nav-link">
+    <a (click)="bill()" class="nav-link">
       <span class="menu-title">Bill</span>
-  </a>
-    <a  (click)="orders()" routerLinkActive="router-link-active"  class="nav-link">
+    </a>
+    <a (click)="orders()" class="nav-link">
       <span class="menu-title">Orders</span>
-  </a>
-    <a  (click)="LogOut()" routerLinkActive="router-link-active"  class="nav-link">
+    </a>
+    <a (click)="infos()" class="nav-link">
+      <span class="menu-title">Infos</span>
+    </a>
+    <a (click)="LogOut()" class="nav-link">
       <span class="menu-title">Logout</span>
     </a>
-  <div class="dot"></div>
+    <div class="dot"></div>
   </nav>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -58,20 +60,20 @@
           Exp month
           <input type="text" name="" placeholder="Enter Month">
           <div id="zip">
-              <span>
-                Exp year
-                <select>
-                  <option>Choose Year..</option>
-                  <option>2022</option>
-                  <option>2023</option>
-                  <option>2024</option>
-                  <option>2025</option>
-                </select>
-              </span>
             <span>
-                CVV
-                <input type="number" name="" placeholder="CVV">
-              </span>
+              Exp year
+              <select>
+                <option>Choose Year..</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+              </select>
+            </span>
+            <span>
+              CVV
+              <input type="number" name="" placeholder="CVV">
+            </span>
           </div>
         </form>
         <div class="row">

@@ -7,11 +7,11 @@
 
           <div class="product-box">
             <a routerLink="/navigation/delivery/products/{{tempProduct.id}}">
-              <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+              <img src="{{ tempProduct.imageUrl }}"  loading="lazy" class="img-responsive">
             </a>
             <h1>{{ tempProduct.name }}</h1>
-            <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
-            <a (click)="addToBill(tempProduct)" class="primary-btn">Add to bill</a>
+            <div class="price">{{ tempProduct.unitPrice}} DH</div>
+            <button (click)="addToBill(tempProduct)" class="btn btn-sm pay-button">Add to bill</button>
           </div>
 
         </div>
