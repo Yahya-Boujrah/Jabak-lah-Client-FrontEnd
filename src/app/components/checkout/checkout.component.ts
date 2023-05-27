@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CheckoutService} from "../../services/checkout.service";
 import {environment} from "../../../environments/environment";
-import {PaymentInfo} from "../../interfaces/payment-info";
+
 
 /// <reference path="../../../typings.d.ts" />
 @Component({
@@ -14,11 +14,13 @@ export class CheckoutComponent implements OnInit{
   stripe = Stripe(environment.stripePublishableKey);
 
 
+  secretKey : string = environment.stripePublishableKey;
+
   cardElement : any;
 
   displayError : any;
 
-  test : any;
+  @Input() amount !: any;
 
   constructor(private checkoutService : CheckoutService) {
   }
@@ -44,7 +46,7 @@ export class CheckoutComponent implements OnInit{
   }
 
   onSubmit(){
-    this.checkoutService.createPaymentIntent({amount : 100*10, currency:'USD', receiptEmail:'mouadrabihi07@gmail.com'}).subscribe(
+    this.checkoutService.createPaymentIntent({amount : this.amount * 10, currency:'USD', receiptEmail:'mouadrabihi07@gmail.com'}).subscribe(
       response => {
 
         // this.test = JSON.parse(response?.data?.paymentIntent).client_secret;

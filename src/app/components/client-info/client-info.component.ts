@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomResponse } from 'src/app/interfaces/Custom-response';
 import { User } from 'src/app/interfaces/User.interface';
 import { ClientService } from 'src/app/services/Client.service';
 
