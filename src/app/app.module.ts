@@ -24,6 +24,8 @@ import {SearchComponent} from "./components/search/search.component";
 import {ProductDetailsComponent} from "./components/product-details/product-details.component";
 import { OrderTableComponent } from './components/order-table/order-table.component';
 import { RechargeComponent } from './components/recharge/recharge.component';
+import {ClientInfoComponent} from "./components/client-info/client-info.component";
+import { StripePaymentComponent } from './components/stripe-payment/stripe-payment.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { RechargeComponent } from './components/recharge/recharge.component';
     CheckoutComponent,
     SearchComponent,
     ProductDetailsComponent,
-    OrderTableComponent
+    OrderTableComponent,
+    ClientInfoComponent,
+    StripePaymentComponent
   ],
   imports: [
     BrowserModule,

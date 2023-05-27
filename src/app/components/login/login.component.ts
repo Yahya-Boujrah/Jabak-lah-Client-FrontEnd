@@ -5,7 +5,6 @@ import { take } from 'rxjs';
 import { BillService } from 'src/app/services/Bill.service';
 import { DebtService } from 'src/app/services/Debt.service';
 import { LoginService } from 'src/app/services/Login.service';
-import { NgToastService } from 'ng-angular-popup';
 
 
 @Component({
@@ -17,14 +16,14 @@ export class LoginComponent{
   authToken !: string;
 
   constructor(private authService: LoginService, private debtService: DebtService,
-    private router: Router, private route: ActivatedRoute, private billService: BillService, private popup: NgToastService) { }
+    private router: Router, private route: ActivatedRoute, private billService: BillService) { }
 
   login(form: NgForm) {
     const phone : string = form.value.phone.concat(":CLIENT");
     const password : string = form.value.password;
 
     console.log(phone);
-    
+
     this.authService.authenticate(phone, password).subscribe(response => {
       if (response) {
         console.log("login success")
@@ -34,14 +33,14 @@ export class LoginComponent{
         this.debtService.generateDebts$.pipe(take(1)).subscribe();
         this.billService.createBill$.subscribe();
 
-        this.popup.success({detail:"Success",summary:"Logged successfully",duration:2500});
+        //this.popup.success({detail:"Success",summary:"Logged successfully",duration:2500});
         this.router.navigate(['navigation']);
 
       } else {
-        this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
+        //this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
       }
     }, error => {
-      this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
+     // this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
     });
     form.reset();
   }
@@ -53,7 +52,7 @@ export class LoginComponent{
     form.reset();
 
   }
-  
+
 
   switch(){
     let switchCtn = document.querySelector("#switch-cnt") as HTMLElement;
