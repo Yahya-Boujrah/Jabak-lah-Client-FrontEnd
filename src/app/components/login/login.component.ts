@@ -24,7 +24,7 @@ export class LoginComponent{
     const password : string = form.value.password;
 
     console.log(phone);
-    
+
     this.authService.authenticate(phone, password).subscribe(response => {
       if (response) {
         console.log("login success")
@@ -34,14 +34,14 @@ export class LoginComponent{
         this.debtService.generateDebts$.pipe(take(1)).subscribe();
         this.billService.createBill$.subscribe();
 
-        //this.popup.success({detail:"Success",summary:"Logged successfully",duration:2500});
+        ////this.popup.success({detail:"Success",summary:"Logged successfully",duration:2500});
         this.router.navigate(['navigation']);
 
       } else {
         //this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
       }
     }, error => {
-      //this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
+     // //this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
     });
     form.reset();
   }
@@ -53,7 +53,7 @@ export class LoginComponent{
     form.reset();
 
   }
-  
+
 
   switch(){
     let switchCtn = document.querySelector("#switch-cnt") as HTMLElement;
