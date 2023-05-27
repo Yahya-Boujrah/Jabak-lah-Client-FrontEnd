@@ -1,18 +1,15 @@
-<div class="detail-section">
-  <div class="container-fluid">
+<div class="detail-section container-fluid">
+  <img src="{{ response?.data?.product?.imageUrl }}" class="detail-img">
 
-    <img src="{{ response?.data?.product?.imageUrl }}" class="detail-img">
+  <h3>{{ response?.data?.product?.name }}</h3>
+  <div class="price">{{ response?.data?.product?.unitPrice}} DH</div>
+  <button class="btn btn-sm pay-button">Add to bill</button>
 
-    <h3>{{ response?.data?.product?.name }}</h3>
-    <div class="price">{{ response?.data?.product?.unitPrice}} DH</div>
-    <button class="btn btn-primary btn-sm">Add to bill</button>
+  <hr>
+  <h4>Description</h4>
+  <p>{{ response?.data?.product?.description }}</p>
 
-    <hr>
-    <h4>Description</h4>
-    <p>{{ response?.data?.product?.description }}</p>
-
-    <a routerLink="/products" class="mt-5">Back to Product List</a>
-  </div>
+  <a routerLink="/navigation/delivery" class="mt-5">
+    <fa-icon [icon]="faArrowsLeftRightToLine"></fa-icon>
+      Back to Product List</a>
 </div>
-
-

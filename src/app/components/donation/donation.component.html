@@ -2,21 +2,21 @@
     <div class="center" >
         <div class="card-body">
             <h1>
-                Effectuer un Don
+                Donation space
             </h1>
-            <form>
+            <form #form="ngForm">
                 <div class="row">
                     <div class="col-md">
                         <div class="inputbox">
                             <input type="text" required="required">
-                            <span>NUMÉRO DE DONATEUR</span>
+                            <span>Donator Name</span>
                         </div>
                     </div>
 
                     <div class="col-md">
                         <div class="inputbox">
-                            <input type="text" required="required">
-                            <span>Montant de donation</span>
+                            <input type="text" [(ngModel)]="don" required="required">
+                            <span>Donation Amount</span>
                         </div>
                     </div>
                 </div>
@@ -36,8 +36,9 @@
         <hr>
         <div class="row">
             <div class="col-md-6 "></div>
-            <div class="col-md-4 "> <a href="#" class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Bill</a> </div>
-            <div class="col-md-2 "> <a href="#" class="btn btn-sm animated-button victoria-three" (click)="cancel()">Cancel</a> </div>
+            <div class="col-md-4 "> <button class="btn btn-sm animated-button victoria-three" 
+                data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="don === 0">Add To Bill</button> </div>
+            <div class="col-md-2 "> <button class="btn btn-sm animated-button victoria-three" (click)="cancel()">Cancel</button> </div>
         </div>
                
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

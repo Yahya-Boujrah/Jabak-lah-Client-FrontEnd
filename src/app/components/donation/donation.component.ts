@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./donation.component.css']
 })
 export class DonationComponent {
-  don:number = 50;
+  don:number = 0;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
   cancel(){

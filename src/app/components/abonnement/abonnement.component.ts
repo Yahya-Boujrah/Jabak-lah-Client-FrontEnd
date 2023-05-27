@@ -45,9 +45,7 @@ export class AbonnementComponent implements OnInit{
       });
       this.debtService.bindDebtToBill$(ids).subscribe(
         response => {
-          this.dataSubject.next(
-            null
-          )
+          this.dataSubject.next(null)
           this.debtsResponse = this.dataSubject.value;
         }
       );

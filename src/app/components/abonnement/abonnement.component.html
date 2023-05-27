@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-md-6 "> <a (click)="add2Bill(debtsResponse?.data?.debts)"
                                 class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Add to bill</a> </div>
+                                data-bs-target="#paymentModal">Add to bill</a> </div>
                         <div class="col-md-5 "> <a class="btn btn-sm animated-button victoria-three"
                                 (click)="cancel()">Cancel</a> </div>
                     </div>
@@ -32,16 +32,15 @@
                 <div class="col" *ngIf="debtsResponse?.data?.debts!.length === 0 || added2Bill">
                     You have no debts to pay !
                 </div>  
-            </div>
-           
+            </div>  
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <img src="../../../assets/verification.png" id="image"><br><br>
-                        <h6 id="text">Your bill is payed successfully !</h6>
+                        <img src="../../../assets/verification.png" id="image">
+                        <h6 id="text">Your debts are added to the bill successfully !</h6>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {NgOtpInputModule} from 'ng-otp-input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import {SearchComponent} from "./components/search/search.component";
 import {ProductDetailsComponent} from "./components/product-details/product-details.component";
 import { OrderTableComponent } from './components/order-table/order-table.component';
 import { RechargeComponent } from './components/recharge/recharge.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { VerificationCodeComponent } from './components/verification-code/verification-code.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +48,16 @@ import { RechargeComponent } from './components/recharge/recharge.component';
     CheckoutComponent,
     SearchComponent,
     ProductDetailsComponent,
-    OrderTableComponent
+    OrderTableComponent,
+    VerificationCodeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule,
+    NgOtpInputModule
   ],
   providers: [{provide : HTTP_INTERCEPTORS, useClass : AuthInterceptorService, multi : true}],
   bootstrap: [AppComponent]

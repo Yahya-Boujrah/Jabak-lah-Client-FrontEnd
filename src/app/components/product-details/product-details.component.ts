@@ -3,6 +3,8 @@ import {ProductService} from "../../services/product.service";
 import {ActivatedRoute} from "@angular/router";
 import {CustomResponse} from "../../interfaces/Custom-response";
 
+import { faArrowsLeftRightToLine } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-product-details',
@@ -10,6 +12,7 @@ import {CustomResponse} from "../../interfaces/Custom-response";
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit{
+  faArrowsLeftRightToLine = faArrowsLeftRightToLine;
 
   productId !: number;
 

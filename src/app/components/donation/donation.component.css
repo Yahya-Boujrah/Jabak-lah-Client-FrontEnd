@@ -54,14 +54,15 @@
     font-size: 1em;
 }
 
-a.animated-button:link:hover, a.animated-button:visited:hover {
+button.animated-button:hover, button.animated-button:visited:hover {
 	color: #8e13d1;
 	text-shadow: none;
 }
 
-a.animated-button:link, a.animated-button:visited {
+button.animated-button, button.animated-button:visited {
 	position: relative;
 	display: block;
+  width: 200px;
 	margin: 30px auto 0;
 	padding: 14px 15px;
 	color: #000000;
@@ -79,7 +80,7 @@ a.animated-button:link, a.animated-button:visited {
 	-o-transition: all 1s ease;
 	transition: all 1s ease; */
 }
-a.animated-button.victoria-three {
+button.animated-button.victoria-three {
 	border: 2px solid #4b125c;
 }
 

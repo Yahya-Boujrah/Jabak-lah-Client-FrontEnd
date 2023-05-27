@@ -1,56 +1,58 @@
-.container d-flex{
-    margin: 30px 80px;
-    padding-top: 40px;
+.container d-flex {
+  margin: 30px 80px;
+  padding-top: 40px;
 }
 
-.card-title{
-    color: rgb(74, 5, 92);
+.card-title {
+  color: rgb(74, 5, 92);
 }
-.card-body{
-    padding: 20px;
+.card-body {
+  padding: 20px;
 }
 
-img{
-    width: 90%;
-    padding: 20px;
-	height: 400px;
-    
+img {
+  width: 90%;
+  padding: 20px;
+  height: 400px;
 }
 
 /* button css  */
 
-a.animated-button:hover, a.animated-button:visited:hover {
-	color: #8e13d1;
-	text-shadow: none;
+a.animated-button:hover,
+a.animated-button:visited:hover {
+  color: #8e13d1;
+  text-shadow: none;
 }
 
-a.animated-button, a.animated-button:visited {
-	position: relative;
-	display: block;
-	margin: 30px auto 0;
-	padding: 14px 15px;
-	color: #000000;
-	font-size:14px;
-	border-radius: 10px;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	letter-spacing: .08em;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+a.animated-button,
+a.animated-button:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #000000;
+  font-size: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 a.animated-button.victoria-three {
-	border: 2px solid #4b125c;
+  border: 2px solid #4b125c;
 }
 
 /* Modal css */
-img#image{
-	height: 150px;
-	width: auto;
-	padding-left: 180px;
-
-  }
-  .modal-body #text{
-	padding-left: 100px;
-  }
+img#image {
+  height: 100px;
+  width: auto;
+ 
+}
+.modal-body{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}

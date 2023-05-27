@@ -17,7 +17,7 @@ export class OrderTableComponent implements OnInit{
   ngOnInit(): void {
 
     this.orderService.getOrders().subscribe(response => {
-      this.response = response;
+      this.response = { ...response, data: { orders: response.data.orders?.reverse() } };
     })
   }
 

@@ -47,52 +47,40 @@
           </div>
         </div>
       </div>
-      <div  class="button">
-          <button class="btn btn-sm pay-button " (click)="cancel()">Cancel</button>
-        <button class="btn btn-sm pay-button " (click)="payBill()" [disabled]=" debtsBillResponse?.data?.debts?.length === 0">Pay Bill</button>
-    </div>
-    </div>
-    <!-- <div class="col-lg-5">
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="container">
-            <div class="left">
-              <h3 class="mb-0">
-                <strong> Bill Details </strong>
-              </h3>
-              <form>
-                Full name
-                <input type="text" name="" placeholder="Enter name">
-                Email
-                <input type="text" name="" placeholder="Enter email">
+      <div class="button">
+        <button class="btn btn-sm pay-button " (click)="cancel()">Cancel</button>
+        <button class="btn btn-sm pay-button " (click)="payBill()"  [disabled]=" debtsBillResponse?.data?.debts?.length === 0"
+          data-bs-toggle="modal" data-bs-target="#msgModal">Pay Bill</button>
+      </div>
 
-                Address
-                <input type="text" name="" placeholder="Enter address">
-
-                City
-                <input type="text" name="" placeholder="Enter City">
-                <div id="zip">
-                  <label>
-                    State
-                    <select>
-                      <option id="state">Choose State..</option>
-                      <option>Marrakech-Safi</option>
-                      <option>Casablanca-Settat</option>
-                      <option>Rabat-Salé-Kénitra</option>
-                      <option>Dakhla-Oued Ed-Dahab</option>
-                    </select>
-                  </label>
-                  <label>
-                    Zip code
-                    <input type="number" placeholder="Zip code">
-                  </label>
-                </div>
-              </form>
-              <a href="#" class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" id="pay">Pay</a>
-
-          
-            <!-- </div>
-          </div> -->
+      <!-- msg Modal -->
+      <div class="modal fade" id="msgModal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <app-verification-code></app-verification-code>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Modal confirmation -->
+      <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <img src="../../../assets/verification.png" id="image">
+              <h6 id="text">Your bill is paid successfully !</h6>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
