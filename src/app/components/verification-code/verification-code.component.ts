@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {OtpService} from "../../services/otp-service.service";
 
 @Component({
   selector: 'app-verification-code',
@@ -8,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class VerificationCodeComponent implements OnInit {
 
   otpMsg !: string;
+
+
+  constructor(private otpService: OtpService) {
+  }
+
   ngOnInit(): void {
-    
+
   }
 
   submit(): void {
-    console.log(this.otpMsg);
+    this.otpService.confirmPayment(this.otpMsg).subscribe();
   }
 
 

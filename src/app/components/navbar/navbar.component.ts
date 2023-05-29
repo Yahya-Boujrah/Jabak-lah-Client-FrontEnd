@@ -49,7 +49,7 @@ export class NavbarComponent{
   LogOut(){
     this.billService.deleteBill$.subscribe();
     sessionStorage.removeItem('token');
-    this.router.navigate([''] );
+    this.router.navigate(['login'] );
   }
   billHistory(){
     this.router.navigate(['history'], {relativeTo: this.route});

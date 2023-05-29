@@ -17,15 +17,20 @@ import {ProductCategoryMenuComponent} from "./components/product-category-menu/p
 import {ProductListComponent} from "./components/product-list/product-list.component";
 import {ProductDetailsComponent} from "./components/product-details/product-details.component";
 import {OrderTableComponent} from "./components/order-table/order-table.component";
+import {ChangePasswordComponent} from "./components/change-password/change-password.component";
+import {PasswordChangeGuard} from "./password-change.guard";
 
 
 const routes: Routes = [
   {
-    path:'', component:LoginComponent
+    path:'login', component:LoginComponent
   },
   {
     path:'' ,canActivate:[AuthGuard], children:[
       {
+        path:'change-pwd', component: ChangePasswordComponent,canActivate:[PasswordChangeGuard]
+      },
+          {
         path: "navigation" , component: NavigationComponent, children:[
           {
             path: "" , component: CreditorsComponent
@@ -46,7 +51,7 @@ const routes: Routes = [
           {
             path:'history', component: BillHistoryComponent
           },
-          
+
           {
             path: 'infos', component:ClientInfoComponent
           },
@@ -67,7 +72,7 @@ const routes: Routes = [
 
     ]
   },
-  {path: '**', redirectTo:''}
+  {path: '**', redirectTo:'login'}
 ];
 
 @NgModule({
