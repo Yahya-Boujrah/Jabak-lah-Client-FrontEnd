@@ -7,16 +7,34 @@
 
           <div class="product-box">
             <a routerLink="/navigation/delivery/products/{{tempProduct.id}}">
-              <img src="{{ tempProduct.imageUrl }}"  loading="lazy" class="img-responsive">
+              <img src="{{ tempProduct.imageUrl }}" loading="lazy" class="img-responsive">
             </a>
-            <h1>{{ tempProduct.name }}</h1>
+            <h1> <a routerLink="/navigation/delivery/products/{{tempProduct.id}}">
+                {{ tempProduct.name }}
+              </a></h1>
             <div class="price">{{ tempProduct.unitPrice}} DH</div>
-            <button (click)="addToBill(tempProduct)" class="btn btn-sm pay-button">Add to bill</button>
+            <span class="badge" [ngClass]="tempProduct.unitsInStock === 0 ? 'badge-soft-danger' : 'badge-soft-success'">{{tempProduct.unitsInStock !== 0 ? "In Stock" : "Out of Stock"}}</span>
+            <br>
+            <button (click)="addToBill(tempProduct)" class="btn btn-sm pay-button mt-3" data-bs-toggle="modal"
+              data-bs-target="#paymentModal">Add to bill</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- modal -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="../../../assets/verification.png" id="image">
+          <h6 id="text">The product is added to the bill successfully !</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -110,6 +110,10 @@ img#image {
   flex-direction: column;
   align-items: center;
 }
+.project-list-table {
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
 
 @media only screen and (max-width: 770px) {
   .container {

@@ -6,13 +6,21 @@ import {SecretKeyService} from "../../services/secret-key.service";
 import {CheckoutService} from "../../services/checkout.service";
 import {NgForm} from "@angular/forms";
 
+import { faFile, faCircleInfo, faRightFromBracket , faRectangleList, faNewspaper, faCartShopping} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent{
-
+  faFile = faFile;
+  faCircleInfo= faCircleInfo;
+  faRightFromBracket=faRightFromBracket;
+  faRectangleList=faRectangleList;
+  faNewspaper=faNewspaper;
+  faCartShopping=faCartShopping;
+  
   secretKey !: string;
 
   constructor(private debtService: DebtService,

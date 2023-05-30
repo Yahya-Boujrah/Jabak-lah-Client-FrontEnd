@@ -1,33 +1,64 @@
-.price{
-    margin:15px 0 15px;
-    font-weight:800;
-    color:#3a283d
+.price {
+    font-size: 17pt;
+  margin: 15px 0 15px;
+  font-weight: bold;
+  color: #3a283d;
 }
 
-.detail-section{
-    margin-top: 2rem;
-    margin-bottom:3rem;
-
+.detail-section {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
-.detail-img{
-    width: 30%;
+.detail-img {
+  width: 30%;
+}
+.infos{
+    width:20rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
+.link-back {
+  text-decoration: none;
+}
 button.pay-button:hover {
-	color: #8e13d1;
+  color: #8e13d1;
 }
 
-button.pay-button, button.pay-button:visited {
-    display:inline-block;
-    margin-top:5px;
-	padding:7px 20px;
-	color: #000000;
-	font-size:14px;
-	border-radius: 10px;
-	font-weight: bold;	
-	text-align: center;
+button.pay-button,
+button.pay-button:visited {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 7px 20px;
+  color: #000000;
+  font-size: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
 }
 button.pay-button {
-	border: 2px solid #4b125c;
+  border: 2px solid #4b125c;
+}
+
+/* Modal css */
+img#image {
+  height: 80px;
+  width: auto;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge-soft-danger {
+    color: #f56e6e !important;
+    background-color: rgba(245,110,110,.1);
+}
+.badge-soft-success {
+    color: #63ad6f !important;
+    background-color: rgba(99,173,111,.1);
 }

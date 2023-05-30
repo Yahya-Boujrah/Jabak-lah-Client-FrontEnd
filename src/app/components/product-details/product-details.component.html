@@ -2,14 +2,34 @@
   <img src="{{ response?.data?.product?.imageUrl }}" class="detail-img">
 
   <h3>{{ response?.data?.product?.name }}</h3>
-  <div class="price">{{ response?.data?.product?.unitPrice}} DH</div>
-  <button class="btn btn-sm pay-button">Add to bill</button>
+  <div class="infos">
+    <div class="price">{{ response?.data?.product?.unitPrice}} DH</div>
+    <span class="badge" [ngClass]="response?.data?.product?.unitsInStock === 0 ? 'badge-soft-danger' : 'badge-soft-success'">
+        {{response?.data?.product?.unitsInStock !== 0 ? "In Stock" : "Out of Stock"}}</span>
+  </div>
+  <button (click)="addToBill(response?.data?.product)" class="btn btn-sm pay-button" data-bs-toggle="modal"
+    data-bs-target="#paymentModal">Add to bill</button>
 
   <hr>
   <h4>Description</h4>
   <p>{{ response?.data?.product?.description }}</p>
 
-  <a routerLink="/navigation/delivery" class="mt-5">
-    <fa-icon [icon]="faArrowsLeftRightToLine"></fa-icon>
-      Back to Product List</a>
+  <a routerLink="/navigation/delivery" class="mt-5 link-back">
+    <fa-icon [icon]="faArrowLeft"></fa-icon>
+    Back to Product List</a>
+
+  <!-- modal -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="../../../assets/verification.png" id="image">
+          <h6 id="text">The product is added to the bill successfully !</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

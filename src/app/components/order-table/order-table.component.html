@@ -1,21 +1,23 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Total Price</th>
-      <th>Tracking Number</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of response?.data?.orders">
-      <td>{{ order.id }}</td>
-      <td>{{ order.totalPrice }}</td>
-      <td>{{ order.orderTrackingNumber }}</td>
-      <td><span class="badge mb-0" [ngClass]="{'badge-soft-danger': order.status === 'ORDER_ON_PROCESS',
+<div class="wrapper">
+  <table class="table table-striped project-list-table table-nowrap table-borderless">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Total Price</th>
+        <th>Tracking Number</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of response?.data?.orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.totalPrice }}</td>
+        <td>{{ order.orderTrackingNumber }}</td>
+        <td><span class="badge mb-0" [ngClass]="{'badge-soft-danger': order.status === 'ORDER_ON_PROCESS',
       'badge-soft-primary' :  order.status === 'PACKAGE_ON_DELIVERY' ,
       'badge-soft-success' :  order.status === 'PACKAGE_DELIVERED' }">{{ order.status }}</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

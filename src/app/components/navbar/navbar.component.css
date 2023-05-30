@@ -14,10 +14,15 @@ img{
     margin-left: 8rem;
 
 }
+.nav-link{
+  display: flex;
+  gap:10pt;
+}
 .nav-items{
   display: flex;
   gap: 1.5rem;
   margin-right: 4rem;
+  text-transform: uppercase;
 
 }
 .nav-item{
@@ -27,7 +32,7 @@ img{
     border: none;
     font-weight: 500;
     border-radius: 30px;
-    width: 120px;
+    width: 150px;
     text-align: center;
     text-decoration: none;
 }
@@ -42,6 +47,7 @@ img{
     background-color: #c0b8c0;
     margin-top: 0%;
     justify-content: space-evenly;
+    box-shadow: 0px 5px 20px grey;
 }
 
 .bottom-navbar a {
@@ -50,7 +56,6 @@ img{
   font-size: 1.2em;
   text-transform: uppercase;
   font-weight: 500;
-  display: inline-block;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -64,7 +69,6 @@ form{
 }
 
 h3{
-	margin-top: 1rem;
 	color:#2c3e50;
 	}
 
@@ -90,7 +94,7 @@ form input[type="text"]{
     height: 25px;
     width: auto;
 }
-input[type="submit"]{
+.btn-modal{
     width: 45%;
 	padding: 0.7rem 1.5rem;
 	background: #34495e;
@@ -105,7 +109,43 @@ input[type="submit"]{
     border-radius: 3px;
 }
 
-input[type="submit"]:hover{
+.btn-modal:hover{
 	background: #2c3e50;
 }
 
+.input {
+  outline: none;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 80%;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.input:focus {
+  color: rgba(0, 0, 0, 0.8);
+} 
+
+.label{
+  display: block;
+  margin: 0 0 20px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+}
+.modal-title{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  word-spacing: 2px;
+  /* letter-spacing: 2px; */
+}

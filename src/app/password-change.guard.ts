@@ -15,6 +15,7 @@ export class PasswordChangeGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      
     this.authService.isPasswordChanged().subscribe(response =>{
       this.isPasswordChanged = response.data?.isPasswordChanged;
       console.log(this.isPasswordChanged);

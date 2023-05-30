@@ -16,3 +16,7 @@
     color: #57c9eb !important;
     background-color: rgba(87,201,235,.1);
 }
+.project-list-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}

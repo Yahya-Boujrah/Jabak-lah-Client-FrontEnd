@@ -17,12 +17,13 @@
         </div>
         
         <select class="form__input m-1 g-2" ngModel name="type" required>
+          <option value="" disabled selected hidden>Please Choose...</option>
           <option value="Plafond_200DH">Hssab 1 - Plafond : 200 DH</option>
           <option value="Plafond_5000DH">Hssab 2 - Plafond : 5000 DH</option>
           <option value="Plafond_20000DH">Hssab 3 - Plafond : 20000 DH</option>
           <option value="Plafond_50000DH">Hssab 4 - Plafond : 50000 DH</option>
         </select>
-        <button class="form__button button submit" (click)="register(signupForm)" [disabled]="signupForm.invalid">SIGN UP</button>
+        <button class="btn form__button button submit" (click)="register(signupForm)" [disabled]="signupForm.invalid">SIGN UP</button>
       </form>
     </div>
 
@@ -31,7 +32,7 @@
         <h2 class="form_title title">LOGIN</h2>
         <input class="form__input" type="text" placeholder="Phone Number" ngModel name="phone" required>
         <input class="form__input" type="password" placeholder="Password" ngModel name="password" required>
-        <button class="form__button button submit" (click)="login(loginForm)" [disabled]="loginForm.invalid">SIGN IN</button>
+        <button class="btn form__button button submit" (click)="login(loginForm)" [disabled]="loginForm.invalid">SIGN IN</button>
       </form>
     </div>
 

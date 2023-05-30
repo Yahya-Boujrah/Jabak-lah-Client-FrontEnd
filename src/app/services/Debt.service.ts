@@ -42,5 +42,13 @@ export class DebtService {
     .pipe(
       tap(console.log)
     )
+
+      
+  deleteDebtFromBill$ = (debtId: number) => <Observable<CustomResponse>>
+  this.http.put<CustomResponse>(`${this.apiUrl}/debt/delete/${debtId}`, null, httpOptions)
+  .pipe(
+    tap(console.log)
+  )
+
   
 }

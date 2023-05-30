@@ -18,23 +18,18 @@
     margin-bottom:60px
 }
 .price{
+    font-size: 13pt;
     margin:15px 0 15px;
-    font-weight:800;
+    font-weight:bolder;
     color:#3a283d
 }
 .product-box h1{
-    font-size:18px;
+    font-size:18pt;
     border-bottom:1px solid #ccc;
     padding-bottom:5px;
     font-weight:600;
     padding-top:12px;
     margin-bottom:7px
-}
-.product-box h2{
-    font-size:15px;
-    padding-bottom:0;
-    font-weight:500;
-    color:#585858
 }
 
 button.pay-button:hover {
@@ -53,4 +48,31 @@ button.pay-button, button.pay-button:visited {
 }
 button.pay-button {
 	border: 2px solid #4b125c;
+}
+
+/* Modal css */
+img#image {
+  height: 80px;
+  width: auto;
+ 
+}
+.modal-body{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+
+a{
+    text-decoration: none;
+    color: #3a283d;
+}
+
+.badge-soft-danger {
+    color: #f56e6e !important;
+    background-color: rgba(245,110,110,.1);
+}
+.badge-soft-success {
+    color: #63ad6f !important;
+    background-color: rgba(99,173,111,.1);
 }

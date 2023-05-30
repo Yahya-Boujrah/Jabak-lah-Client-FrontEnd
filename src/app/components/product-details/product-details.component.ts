@@ -3,7 +3,8 @@ import {ProductService} from "../../services/product.service";
 import {ActivatedRoute} from "@angular/router";
 import {CustomResponse} from "../../interfaces/Custom-response";
 
-import { faArrowsLeftRightToLine } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Product } from 'src/app/interfaces/product';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { faArrowsLeftRightToLine } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit{
-  faArrowsLeftRightToLine = faArrowsLeftRightToLine;
+  faArrowLeft = faArrowLeft;
 
   productId !: number;
 
@@ -37,6 +38,10 @@ export class ProductDetailsComponent implements OnInit{
     this.productService.getProduct(this.productId).subscribe(response =>{
       this.response = response;
     })
+  }
+
+  addToBill(product : any){
+    this.productService.addToBill(product).subscribe();
   }
 
 

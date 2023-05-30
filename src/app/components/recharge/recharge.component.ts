@@ -29,11 +29,11 @@ export class RechargeComponent implements OnInit {
     const debt: Debt = {
       name: `Recharge ${this.article.type}` ,
       creditor: this.article.creditor,
-      description: 'Recharge',
-      type:'DEBT',
-      paid:false,
+      description: 'Recharge '+ rechargeForm.value.type,
+      type: 'DEBT',
+      paid: false,
       article : this.article,
-      amount:this.amount
+      amount: this.amount
     };
       this.debtService.createDebt$(debt).subscribe();
       rechargeForm.reset();

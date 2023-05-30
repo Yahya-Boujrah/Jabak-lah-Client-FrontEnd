@@ -6,7 +6,7 @@
     </div>
     <div class="nav-items">
       <a class="nav-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <span class="menu-title">Charge</span>
+        <span class="menu-title">Add balance</span>
       </a>
 
       <a (click)="billHistory()" class="nav-item">
@@ -17,21 +17,27 @@
 
   <nav class="navbar bottom-navbar">
     <a (click)="creditors()" class="nav-link">
+      <fa-icon [icon]="faNewspaper"></fa-icon>
       <span class="menu-title">Creditors</span>
     </a>
     <a (click)="products()" class="nav-link">
+      <fa-icon [icon]="faCartShopping"></fa-icon>
       <span class="menu-title">Products</span>
     </a>
     <a (click)="bill()" class="nav-link">
+      <fa-icon [icon]="faFile"></fa-icon>
       <span class="menu-title">Bill</span>
     </a>
     <a (click)="orders()" class="nav-link">
+      <fa-icon [icon]="faRectangleList"></fa-icon>
       <span class="menu-title">Orders</span>
     </a>
     <a (click)="infos()" class="nav-link">
+      <fa-icon [icon]="faCircleInfo"></fa-icon>
       <span class="menu-title">Infos</span>
     </a>
     <a (click)="LogOut()" class="nav-link">
+      <fa-icon [icon]="faRightFromBracket"></fa-icon>
       <span class="menu-title">Logout</span>
     </a>
     <div class="dot"></div>
@@ -44,46 +50,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="staticBackdropLabel">PAYMENT</h3>
+        <h3 class="modal-title" id="staticBackdropLabel">Add Balance</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-<!--        <form>-->
-<!--          Accepted Card <br>-->
-<!--          <img src="../../../assets/card1.png" class="modal-img">-->
-<!--          <img src="../../../assets/card2.png" class="modal-img">-->
-<!--          <br><br>-->
-
-<!--          Credit card number-->
-<!--          <input type="text" name="" placeholder="Enter card number">-->
-
-<!--          Exp month-->
-<!--          <input type="text" name="" placeholder="Enter Month">-->
-<!--          <div id="zip">-->
-<!--            <span>-->
-<!--              Exp year-->
-<!--              <select>-->
-<!--                <option>Choose Year..</option>-->
-<!--                <option>2022</option>-->
-<!--                <option>2023</option>-->
-<!--                <option>2024</option>-->
-<!--                <option>2025</option>-->
-<!--              </select>-->
-<!--            </span>-->
-<!--            <span>-->
-<!--              CVV-->
-<!--              <input type="number" name="" placeholder="CVV">-->
-<!--            </span>-->
-<!--          </div>-->
-<!--        </form>-->
-<!--        <div class="row">-->
-<!--          <input type="submit" name="" value="Proceed to Checkout">-->
-<!--          <input type="submit" data-bs-dismiss="modal" value="Close">-->
-<!--        </div>-->
         <form class="form" #checkoutForm="ngForm">
-
-          <input type="text" placeholder="amount" ngModel name="amount">
-          <button class="btn btn-primary" (click)="onSubmit(checkoutForm)">OK</button>
+          <label class="label">Specify how much balance to add</label>
+          <input type="text" class="input" placeholder="Amount" ngModel name="amount" required>
+          <button class="btn btn-modal" (click)="onSubmit(checkoutForm)" [disabled]="checkoutForm.invalid">Execute</button>
 
         <app-stripe-payment *ngIf="secretKey" [secretKey] = "secretKey" [amount]="checkoutForm.value.amount"></app-stripe-payment>
         </form>
