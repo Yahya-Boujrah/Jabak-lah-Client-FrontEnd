@@ -1,53 +1,52 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <img src="{{article.creditor.image}}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col">
-            <div class="card-body">
-                <h4 class="card-title">
-                    {{article.creditor.name.toUpperCase()}}
-                </h4> <br>
-                <h5 class="card-text">
-                    Pay your bills of {{article.creditor.name}}
-                </h5>
-                <br>
-                <div *ngIf="debtsResponse?.data?.debts!.length !== 0 ">
-                    <ul *ngFor="let debt of debtsResponse?.data?.debts">
-                        <li>
-                            <h5
-                                [ngStyle]="debt.type == 'PENALTY' ? {'color': 'red', 'font-weight': 'bold'} : {'color': 'green', 'font-weight': 'bold'}">
-                                {{debt.type}}</h5>
-                            <p>{{debt.name}} : {{debt.amount}} DH</p>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-md-6 "> <a (click)="add2Bill(debtsResponse?.data?.debts)"
-                                class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal"
-                                data-bs-target="#paymentModal">Add to bill</a> </div>
-                        <div class="col-md-5 "> <a class="btn btn-sm animated-button victoria-three"
-                                (click)="cancel()">Cancel</a> </div>
-                    </div>
-                </div>
-                <div class="col" *ngIf="debtsResponse?.data?.debts!.length === 0 || added2Bill">
-                    You have no debts to pay !
-                </div>
-            </div>
-            </div>  
-        </div>
+  <div class="row">
+      <div class="col">
+          <img src="{{article.creditor.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col">
+          <div class="card-body">
+              <h4 class="card-title">
+                  {{article.creditor.name.toUpperCase()}}
+              </h4> <br>
+              <h5 class="card-text">
+                  Pay your bills of {{article.creditor.name}}
+              </h5>
+              <br>
+              <div *ngIf="debtsResponse?.data?.debts!.length !== 0 ">
+                  <ul *ngFor="let debt of debtsResponse?.data?.debts">
+                      <li>
+                          <h5
+                              [ngStyle]="debt.type == 'PENALTY' ? {'color': 'red', 'font-weight': 'bold'} : {'color': 'green', 'font-weight': 'bold'}">
+                              {{debt.type}}</h5>
+                          <p>{{debt.name}} : {{debt.amount}} DH</p>
+                      </li>
+                  </ul>
+                  <div class="row">
+                      <div class="col-md-6 "> <a (click)="add2Bill(debtsResponse?.data?.debts)"
+                              class="btn btn-sm animated-button victoria-three" data-bs-toggle="modal"
+                              data-bs-target="#paymentModal">Add to bill</a> </div>
+                      <div class="col-md-5 "> <a class="btn btn-sm animated-button victoria-three"
+                              (click)="cancel()">Cancel</a> </div>
+                  </div>
+              </div>
+              <div class="col" *ngIf="debtsResponse?.data?.debts!.length === 0 || added2Bill">
+                  You have no debts to pay !
+              </div>
+          </div>
+          </div>
+      </div>
 
-        <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img src="../../../assets/verification.png" id="image">
-                        <h6 id="text">Your debts are added to the bill successfully !</h6>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
+      <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <img src="../../../assets/verification.png" id="image">
+                      <h6 id="text">Your debts are added to the bill successfully !</h6>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>

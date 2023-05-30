@@ -5,15 +5,15 @@ import { take } from 'rxjs';
 import { BillService } from 'src/app/services/Bill.service';
 import { DebtService } from 'src/app/services/Debt.service';
 import { LoginService } from 'src/app/services/Login.service';
-// import { NgToastService } from 'ng-angular-popup';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent{
+
   authToken !: string;
 
   constructor(private authService: LoginService, private debtService: DebtService,
@@ -35,7 +35,7 @@ export class LoginComponent{
         this.billService.createBill$.subscribe();
 
         ////this.popup.success({detail:"Success",summary:"Logged successfully",duration:2500});
-        this.router.navigate(['navigation']);
+        this.router.navigate(['/change-pwd']);
 
       } else {
         //this.popup.error({detail:"Error",summary:"Something gone wrong",duration:2500});
@@ -49,6 +49,8 @@ export class LoginComponent{
   register(form: NgForm){
     this.authService.register(form.value).subscribe(response =>{
       alert("success");
+    },error => {
+      console.log(error.message);
     })
     form.reset();
 

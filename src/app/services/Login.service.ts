@@ -38,4 +38,18 @@ export class LoginService {
         console.log
       ));
   }
+
+  changePassword(password: string){
+    return this.http.put<CustomResponse>('http://localhost:8080/api/client/changePassword', password)
+      .pipe(
+        tap(console.log)
+      );
+
+  }
+
+  isPasswordChanged(){
+    return this.http.get<CustomResponse>(`${this.URL}/isPasswordChanged`).pipe(
+      tap(console.log)
+    );
+  }
 }

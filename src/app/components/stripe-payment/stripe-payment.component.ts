@@ -64,7 +64,7 @@ export class StripePaymentComponent implements OnInit{
   onConfirm(){
     this.stripe.confirmPayment({elements : this.elements,
       confirmParams: {
-      return_url: 'https://example.com',
+      return_url: 'http://localhost:4200/navigation/infos',
     }});
     this.checkoutService.chargerSolde(Number(this.amount)).subscribe(response => {
         console.log(response?.data?.message);

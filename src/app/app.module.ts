@@ -29,6 +29,8 @@ import {ClientInfoComponent} from "./components/client-info/client-info.componen
 import { StripePaymentComponent } from './components/stripe-payment/stripe-payment.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { VerificationCodeComponent } from './components/verification-code/verification-code.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { VerificationCodeComponent } from './components/verification-code/verifi
     OrderTableComponent,
     ClientInfoComponent,
     StripePaymentComponent,
-    VerificationCodeComponent
+    VerificationCodeComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,9 @@ import { VerificationCodeComponent } from './components/verification-code/verifi
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    FontAwesomeModule,
+    NoopAnimationsModule
   ],
   providers: [{provide : HTTP_INTERCEPTORS, useClass : AuthInterceptorService, multi : true}],
   bootstrap: [AppComponent]
