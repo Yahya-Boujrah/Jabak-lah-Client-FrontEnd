@@ -155,9 +155,8 @@ a {
 
 /* Modal css */
 img{
-  height: 100px;
+  height: 130px;
   width: auto;
-  padding-left: 180px;
 }
 .modal-body #text{
   padding-left: 100px;
@@ -165,3 +164,4 @@ img{
 #btn-modal{
   color: #000;
 }
+

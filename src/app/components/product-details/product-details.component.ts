@@ -19,6 +19,7 @@ export class ProductDetailsComponent implements OnInit{
 
   response !: CustomResponse;
 
+
   constructor(private productService: ProductService,
               private route: ActivatedRoute) { }
 
@@ -43,7 +44,4 @@ export class ProductDetailsComponent implements OnInit{
   addToBill(product : any){
     this.productService.addToBill(product).subscribe();
   }
-
-
-
 }

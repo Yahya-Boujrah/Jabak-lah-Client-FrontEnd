@@ -26,7 +26,7 @@
                     <th scope="row">{{item.id}}</th>
                     <td>{{item.name}}</td>
                     <td>{{item.amount}} DH</td>
-                    <td><a (click)="openModal(item)" id="delete"><fa-icon [icon]="faTrash"></fa-icon></a></td>
+                    <td><a (click)="openModal(item, 'delete')" id="delete"><fa-icon [icon]="faTrash"></fa-icon></a></td>
                   </tr>
                 </tbody>
                 <tbody *ngIf=" debtsBillResponse?.data?.debts?.length === 0">
@@ -42,15 +42,15 @@
               <h4>Total : </h4>
             </div>
             <div class="col-md-3">
-              <h4> 0 DH</h4>
+              <h4> {{total}} DH</h4>
             </div>
           </div>
         </div>
       </div>
       <div class="button">
         <button class="btn btn-sm pay-button " (click)="cancel()">Cancel</button>
-        <button class="btn btn-sm pay-button " (click)="payBill()"  [disabled]=" debtsBillResponse?.data?.debts?.length === 0"
-          data-bs-toggle="modal" data-bs-target="#msgModal">Pay Bill</button>
+        <button class="btn btn-sm pay-button " (click)="payBill()" 
+             [disabled]=" debtsBillResponse?.data?.debts?.length === 0">Pay Bill</button>
       </div>
 
       <!-- msg Modal -->
@@ -100,9 +100,24 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
+
+      <!-- No Balance Modal  -->
+      <div class="modal fade" id="noBalance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="../../../assets/failed-icon.jpg" id="image">
+                    <h6 id="text">Your don't have enough balance for this transation !</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
   </div>
 </div>
