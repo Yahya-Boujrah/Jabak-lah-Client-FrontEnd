@@ -31,6 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { VerificationCodeComponent } from './components/verification-code/verification-code.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     ClientInfoComponent,
     StripePaymentComponent,
     VerificationCodeComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
