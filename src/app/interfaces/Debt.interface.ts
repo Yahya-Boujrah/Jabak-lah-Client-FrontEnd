@@ -9,6 +9,6 @@ export interface Debt {
     client?:any;
     creditor?:any;
     article?:any;
-    added2Bill?:boolean
+    addedToBill?:boolean
 
 }

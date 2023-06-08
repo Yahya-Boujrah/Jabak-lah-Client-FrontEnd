@@ -24,7 +24,6 @@ export class ClientService {
       .pipe(
         tap(console.log)
       )
-  
  
   
 }

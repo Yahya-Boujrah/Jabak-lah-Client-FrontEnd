@@ -7,7 +7,7 @@ import { Debt } from "../interfaces/Debt.interface";
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-  }),
+  })
 };
 
 @Injectable({
@@ -50,5 +50,4 @@ export class DebtService {
     tap(console.log)
   )
 
-  
 }

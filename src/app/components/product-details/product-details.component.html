@@ -8,6 +8,7 @@
         {{response?.data?.product?.unitsInStock !== 0 ? "In Stock" : "Out of Stock"}}</span>
   </div>
   <button (click)="addToBill(response?.data?.product)" class="btn btn-sm pay-button" data-bs-toggle="modal"
+    [disabled]="response?.data?.product?.unitsInStock === 0"
     data-bs-target="#paymentModal">Add to bill</button>
 
   <hr>

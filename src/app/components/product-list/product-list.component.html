@@ -15,7 +15,7 @@
             <div class="price">{{ tempProduct.unitPrice}} DH</div>
             <span class="badge" [ngClass]="tempProduct.unitsInStock === 0 ? 'badge-soft-danger' : 'badge-soft-success'">{{tempProduct.unitsInStock !== 0 ? "In Stock" : "Out of Stock"}}</span>
             <br>
-            <button (click)="addToBill(tempProduct)" class="btn btn-sm pay-button mt-3" data-bs-toggle="modal"
+            <button (click)="addToBill(tempProduct)" [disabled]="tempProduct.unitsInStock === 0" class="btn btn-sm pay-button mt-3" data-bs-toggle="modal"
               data-bs-target="#paymentModal">Add to bill</button>
           </div>
         </div>

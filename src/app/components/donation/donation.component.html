@@ -1,9 +1,12 @@
 <div class="container  ">
     <div class="center" >
         <div class="card-body">
-            <h1>
-                Donation space
-            </h1>
+            <div class="row">
+                <h1>
+                    <img src="{{article.creditor.image}}">
+                    {{article.creditor.name}}
+                </h1>
+            </div><br>
             <form #form="ngForm">
                 <div class="row">
                     <div class="col-md">
@@ -36,7 +39,7 @@
         <hr>
         <div class="row justify-content-end">
             <div class="col-md-4 "> <button class="btn btn-sm animated-button victoria-three" 
-                data-bs-toggle="modal" (click)="donate()" data-bs-target="#exampleModal"  [disabled]="don === 0">Add To Bill</button> </div>
+                data-bs-toggle="modal" (click)="donate()" data-bs-target="#exampleModal"  [disabled]="form.invalid">Add To Bill</button> </div>
             <div class="col-md-2 "> <button class="btn cancel animated-button victoria-three" (click)="cancel()">Cancel</button> </div>
         </div>
                
