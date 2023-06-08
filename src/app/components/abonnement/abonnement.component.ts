@@ -16,9 +16,10 @@ import { DebtService } from 'src/app/services/Debt.service';
 export class AbonnementComponent implements OnInit{
   articleId!: number;
   article!: Article;
-  added2Bill :boolean = false;
+  debts!: boolean;
 
-  debtsResponse !: CustomResponse;
+  debtsResponse?: CustomResponse;
+
 
   public dataSubject = new BehaviorSubject<any>(null);
 
@@ -41,20 +42,21 @@ export class AbonnementComponent implements OnInit{
     console.log(debts);
     if (debts!.length > 0){
       debts!.forEach(debt => {ids.push(debt.id as number);
-        debt.added2Bill= true;
+        debt.addedToBill= true;
       });
       this.debtService.bindDebtToBill$(ids).subscribe(
         response => {
           this.dataSubject.next(null)
           this.debtsResponse = this.dataSubject.value;
+          this.dataSubject
         }
       );
-      this.added2Bill = true;      
-    } 
+      this.debts = true;
+    }
   } 
   
   cancel(){
     this.router.navigate(['navigation']);
-
+    this.debts = false;
   }
 }

@@ -18,6 +18,8 @@ export class BillComponent {
 
   deleteDebt !: Debt;
 
+  total !: number;
+
   debtsBillResponse !: CustomResponse;
   dataSubject = new BehaviorSubject<any>(null);
 
@@ -27,13 +29,22 @@ export class BillComponent {
     this.billService.debtsBill$.subscribe(response =>{
       this.dataSubject.next(response); 
      this.debtsBillResponse = { ...response, data: { debts: response.data.debts?.reverse() } };
+
+     if (this.debtsBillResponse) {
+      this.calculateTotal(); 
+     }
     } )
   }
 
   payBill(){
     this.billService.payBill$.subscribe(response => {
-      this.dataSubject.next(null);
-      this.debtsBillResponse = this.dataSubject.value;
+      // this.dataSubject.next(null);
+      // this.debtsBillResponse = this.dataSubject.value;
+      this.openModal(null, 'balance')
+      console.log("succeded");
+    },error => {
+      this.openModal(null, 'noBalance')
+      console.log("failed");
     })
   }
 
@@ -46,6 +57,7 @@ export class BillComponent {
         }
       )
       this.debtsBillResponse = this.dataSubject.value;
+      this.calculateTotal();
     })
   }
 
@@ -53,18 +65,38 @@ export class BillComponent {
     this.router.navigate(['navigation']);
   }
 
-  openModal(debt : Debt){
+  openModal(debt : any, mode: string){
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-bs-toggle', 'modal');
 
-    this.deleteDebt = debt;
+    if(mode == "balance"){
+      button.setAttribute('data-bs-target', '#msgModal');
+      console.log('you have balance')
+    }
+    if(mode == "noBalance"){
+      button.setAttribute('data-bs-target', '#noBalance');
+      console.log('you have no balance')
+    }
+    if(mode == "delete"){
+      this.deleteDebt = debt;
     button.setAttribute('data-bs-target', '#deleteModal');
+    }
 
     container?.appendChild(button);
     button.click();
+  }
+
+  calculateTotal(): void {
+    this.total = 0; 
+    if (this.debtsBillResponse.data && this.debtsBillResponse.data.debts) {
+      for (const debt of this.debtsBillResponse.data.debts) {
+        if(debt.amount)
+          this.total += debt.amount; 
+      }
+    }
   }
 
 }
