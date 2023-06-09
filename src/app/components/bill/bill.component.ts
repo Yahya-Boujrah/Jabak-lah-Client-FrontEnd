@@ -7,6 +7,7 @@ import { BillService } from 'src/app/services/Bill.service';
 import { DebtService } from 'src/app/services/Debt.service';
 
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { OtpService } from 'src/app/services/otp-service.service';
 
 @Component({
   selector: 'app-bill',
@@ -20,10 +21,13 @@ export class BillComponent {
 
   total !: number;
 
+  otpMsg !: string;
+
   debtsBillResponse !: CustomResponse;
   dataSubject = new BehaviorSubject<any>(null);
 
-  constructor(private billService: BillService , private router: Router, private debtService: DebtService){}
+  constructor(private billService: BillService , private router: Router,
+          private debtService: DebtService,private otpService: OtpService){}
 
   ngOnInit(): void {
     this.billService.debtsBill$.subscribe(response =>{
@@ -35,11 +39,22 @@ export class BillComponent {
      }
     } )
   }
+  
+  submit(): void {
+    this.otpService.confirmPayment(this.otpMsg).subscribe(() =>{
+      this.dataSubject.next(null);
+      this.debtsBillResponse = this.dataSubject.value;
+      this.total = 0;
+    });
+  }
+
+  onOtpChange(data: string){
+    this.otpMsg = data;
+
+  }
 
   payBill(){
     this.billService.payBill$.subscribe(response => {
-      // this.dataSubject.next(null);
-      // this.debtsBillResponse = this.dataSubject.value;
       this.openModal(null, 'balance')
       console.log("succeded");
     },error => {

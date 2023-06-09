@@ -49,16 +49,31 @@
       </div>
       <div class="button">
         <button class="btn btn-sm pay-button " (click)="cancel()">Cancel</button>
-        <button class="btn btn-sm pay-button " (click)="payBill()" 
-             [disabled]=" debtsBillResponse?.data?.debts?.length === 0">Pay Bill</button>
+        <button class="btn btn-sm pay-button " (click)="payBill()"
+          [disabled]="total ===0 || debtsBillResponse?.data?.debts?.length === 0">Pay Bill</button>
       </div>
 
       <!-- msg Modal -->
-      <div class="modal fade" id="msgModal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="msgModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <app-verification-code></app-verification-code>
+              <div id="creditCard" class="form-area">
+
+                <h3>Credit or Debit Card</h3>
+
+                <div id="card-element">
+                  <!-- a Stripe element will be inserted here -->
+                </div>
+
+                <!-- Used to display form errors -->
+                <div id="card-errors" class="displayError.textContent!=='': 'alert alert-danger mt-1'"></div>
+
+              </div>
+              <br />
+              <button class="btn btn-confirm" (click)="onConfirm()">Confirm </button>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -67,28 +82,29 @@
         </div>
       </div>
 
-       <!-- delete Modal -->
-      <div class="modal fade" id="deleteModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- delete Modal -->
+      <div class="modal fade" id="deleteModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog bg-light" style="border-radius:10px">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Debt</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body align-items-start">
-                    You are about to delete this debt from bill
-                    <br>
-                    Are you sure ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" (click)="delete(deleteDebt)"
-                        data-bs-dismiss="modal">Delete</button>
-                </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete Debt</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body align-items-start">
+              You are about to delete this debt from bill
+              <br>
+              Are you sure ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger" (click)="delete(deleteDebt)"
+                data-bs-dismiss="modal">Delete</button>
+            </div>
+          </div>
         </div>
-    </div>
-    
+      </div>
+
       <!-- Modal confirmation -->
       <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -100,24 +116,24 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
-          </div> 
+          </div>
         </div>
       </div>
 
       <!-- No Balance Modal  -->
       <div class="modal fade" id="noBalance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="../../../assets/failed-icon.jpg" id="image">
-                    <h6 id="text">Your don't have enough balance for this transation !</h6>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+          <div class="modal-content">
+            <div class="modal-body">
+              <img src="../../../assets/failed-icon.jpg" id="image">
+              <h6 id="text">Your don't have enough balance for this transation !</h6>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 </div>
