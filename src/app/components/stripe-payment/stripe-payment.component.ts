@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {CheckoutService} from "../../services/checkout.service";
 import {SecretKeyService} from "../../services/secret-key.service";
+import { NgToastService } from 'ng-angular-popup';
 
 
 /// <reference path="../../../typings.d.ts" />
@@ -25,7 +26,7 @@ export class StripePaymentComponent implements OnInit{
 
   elements !: any;
 
-  constructor(private checkoutService : CheckoutService, private secretKeyService : SecretKeyService) {
+  constructor(private checkoutService : CheckoutService, private secretKeyService : SecretKeyService, private popup: NgToastService) {
   }
 
   ngOnInit(): void {
@@ -38,8 +39,6 @@ export class StripePaymentComponent implements OnInit{
     }
 
   }
-
-
 
   private setupStripePaymentForm() {
     const appearance = {
@@ -64,10 +63,15 @@ export class StripePaymentComponent implements OnInit{
   onConfirm(){
     this.stripe.confirmPayment({elements : this.elements,
       confirmParams: {
-      return_url: 'http://localhost:4200/navigation/infos',
+      return_url: 'https://clientportal-7cc7b.web.app/navigation/infos',
     }});
     this.checkoutService.chargerSolde(Number(this.amount)).subscribe(response => {
-        console.log(response?.data?.message);
+        console.log(response);
+        this.popup.success({detail:"Success",summary:"balance updated successfully",duration:2500});
+
+      }, error => {
+        this.popup.error({detail:"Error",summary:"Something went wrong",duration:2500});
+
       }
     );
   }

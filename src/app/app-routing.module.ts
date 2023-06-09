@@ -19,7 +19,7 @@ import {ProductDetailsComponent} from "./components/product-details/product-deta
 import {OrderTableComponent} from "./components/order-table/order-table.component";
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
 import {PasswordChangeGuard} from "./password-change.guard";
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 
 const routes: Routes = [

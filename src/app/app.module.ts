@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {NgToastModule} from 'ng-angular-popup';
 import {NgOtpInputModule} from 'ng-otp-input';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +30,6 @@ import {ClientInfoComponent} from "./components/client-info/client-info.componen
 import { StripePaymentComponent } from './components/stripe-payment/stripe-payment.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { VerificationCodeComponent } from './components/verification-code/verification-code.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
@@ -68,7 +68,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     FontAwesomeModule,
     NgOtpInputModule,
     FontAwesomeModule,
-    NoopAnimationsModule
+    NgToastModule
   ],
   providers: [{provide : HTTP_INTERCEPTORS, useClass : AuthInterceptorService, multi : true}],
   bootstrap: [AppComponent]
