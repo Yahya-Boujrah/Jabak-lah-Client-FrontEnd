@@ -17,10 +17,8 @@ const httpOptions = {
 })
 export class LoginService {
 
-  // private client$ = new BehaviorSubject<any>(null);
-  // currentClient$ = this.client$.asObservable();
 
-  private readonly URL : string = 'http://localhost:8080/api/auth';
+  private readonly URL : string = 'https://jabak-lah-app.herokuapp.com/api/auth';
 
   constructor(private http : HttpClient) { }
 
@@ -28,7 +26,6 @@ export class LoginService {
     return this.http.post<AuthResponse>(`${this.URL}/authenticate`, { username : username, password : password},httpOptions )
       .pipe(tap(response =>{
         const client : User = response.user;
-        // this.client$.next(client);
       }));
   }
 
@@ -40,7 +37,7 @@ export class LoginService {
   }
 
   changePassword(password: string){
-    return this.http.put<CustomResponse>('http://localhost:8080/api/client/changePassword', password)
+    return this.http.put<CustomResponse>('https://jabak-lah-app.herokuapp.com/api/client/changePassword', password)
       .pipe(
         tap(console.log)
       );

@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ArticleService {
-  private readonly apiUrl = 'http://localhost:8080/api/client';  
+  private readonly apiUrl = 'https://jabak-lah-app.herokuapp.com/api/client';  
 
   constructor(private http: HttpClient) {}
 
@@ -23,14 +23,4 @@ export class ArticleService {
       tap(console.log)
     );
     
-
-//   article$ =  (agentId: number) => <Observable<CustomResponse>>
-//   this.http.get<CustomResponse>(`${this.apiUrl}/get/${agentId}`)
-//   .pipe(
-//     tap(console.log),
-//     catchError(() => {
-//       return of('error')
-//     })
-//   );
-
 }

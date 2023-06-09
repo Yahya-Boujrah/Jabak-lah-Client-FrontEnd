@@ -59,21 +59,24 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <div id="creditCard" class="form-area">
-
-                <h3>Credit or Debit Card</h3>
-
-                <div id="card-element">
-                  <!-- a Stripe element will be inserted here -->
+              <div class="row">
+                <div class="col-lg-12 col-md-7 mx-auto my-auto">
+                    <div class="card">
+                        <div class="card-body px-lg-5 py-lg-5 text-center">
+                            <img src="../../assets/msg.png"
+                                class="rounded-circle avatar-lg img-thumbnail mb-4" alt="profile-image">
+                            <h2 class="text">Verfication code</h2>
+                            <p class="mb-4">Please enter the 5-digits code you recieved.</p>
+                            <form #form="ngForm">
+                                <ng-otp-input (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input>
+                                <div class="text-center">
+                                    <button type="button" (click)="submit()" class="btn btn-sm pay-button my-4">Continue</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Used to display form errors -->
-                <div id="card-errors" class="displayError.textContent!=='': 'alert alert-danger mt-1'"></div>
-
-              </div>
-              <br />
-              <button class="btn btn-confirm" (click)="onConfirm()">Confirm </button>
-
+            </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

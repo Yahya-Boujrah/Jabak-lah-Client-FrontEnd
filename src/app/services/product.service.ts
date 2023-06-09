@@ -10,7 +10,7 @@ import {CustomResponse} from "../interfaces/Custom-response";
 export class ProductService {
 
 
-  private baseUrl = 'http://localhost:8080/api/products';
+  private baseUrl = 'https://jabak-lah-app.herokuapp.com/api/products';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -45,7 +45,7 @@ export class ProductService {
   }
 
   addToBill(product : Product){
-    return this.httpClient.post<CustomResponse>('http://localhost:8080/api/client/addProduct',product).pipe(
+    return this.httpClient.post<CustomResponse>('https://jabak-lah-app.herokuapp.com/api/client/addProduct',product).pipe(
       tap(console.log)
     );
   }
